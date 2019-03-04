@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, Microsoft Yahei;
+}
+
+img {
+    display: block;
+    border: none;
+}
+
+#out_box {
+    width: 1050px;
+    margin: 0 auto;
+}
+
+#Bar{
+    width:1050px;
+    height: 43px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    z-index: 10000;
+    margin-left: -525px;
+    background: #F60;
+    opacity: 0.85;
+}
+
+#Bar_content{
+    display: inline-block;
+    color: #fff;
+    font-size: 26px;
+    height: 43px;
+    width: 200px;
+    text-align: center;
+    position: fixed;
+    z-index: 10001;
+    bottom: 0;
+    left: 50%;
+    margin-left: -100px;
+    line-height: 43px;
+}
+
+#fancybox-overlay{
+    z-index: 10002 !important;
+}
+
+#fancybox-wrap{
+    z-index: 10003 !important;
+}
+
+#content1 {
+    background: url(../images/LopNewPage_bg1.jpg) center no-repeat;
+    color: #fff;
+    width: 1050px;
+    height: 563px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.content1_title {
+    background: url(../images/border_bg1.png) center no-repeat;
+    width: 406px;
+    display: block;
+    margin: 0 auto;
+    font-size: 34px;
+    text-align: center;
+}
+
+#campaign_content {
+    width: 780px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+#campaign_time {
+    display: inline-block;
+    padding-top: 10px;
+    font-size: 22px;
+}
+
+.TCbtn {
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#content2 {
+    position: relative;
+    width: 1050px;
+    height: 404px;
+    background: url(../images/LopNewPage_bg2.jpg) center no-repeat;
+    color: #fff;
+    padding-top: 20px;
+}
+
+#advantage_ul {
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 40px;
+    list-style: none;
+    width: 994px;
+    height: 234px;
+}
+
+#advantage_ul > li {
+    float: left;
+    margin-left: 30px;
+}
+
+#advantage_tips {
+    font-size: 12px;
+    width: 994px;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+#content3 {
+    width: 910px;
+    color: #515151;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.content3_title {
+    background: url(../images/border_bg2.png) center no-repeat;
+    width: 406px;
+    display: block;
+    margin: 0 auto;
+    font-size: 34px;
+    text-align: center;
+}
+
+.flow {
+    height: 268px;
+}
+
+.flow_title {
+    font-size: 28px;
+    display: block;
+    background: url(../images/LopNewPage_17.jpg) left bottom no-repeat;
+    margin-top: 35px;
+    padding-bottom: 17px;
+}
+
+#OnlineFlow_ul {
+    width: 910px;
+    height: 158px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    border-bottom: solid 1px #ccc;
+    margin-top: 20px;
+    opacity: 0;
+}
+
+#OnlineFlow_li1 {
+    float: left;
+    margin-left: 0;
+    text-align: center;
+}
+
+#OnlineFlow_li2 {
+    float: left;
+    margin-left: 44px;
+    text-align: center;
+}
+
+#OnlineFlow_li3 {
+    float: left;
+    margin-left: 44px;
+    text-align: center;
+}
+
+#OnlineFlow_step1, #OnlineFlow_step2, #OnlineFlow_step3 {
+    margin-top: 20px;
+    display: inline;
+    opacity: 0;
+}
+
+#PhoneFlow_ul {
+    width: 910px;
+    height: 158px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    border-bottom: solid 1px #ccc;
+    margin-top: 20px;
+    opacity: 0;
+}
+
+#PhoneFlow_li1 {
+    float: left;
+    margin-left: 0;
+    text-align: center;
+}
+
+#PhoneFlow_li2 {
+    float: left;
+    margin-left: 44px;
+    text-align: center;
+}
+
+#PhoneFlow_li3 {
+    float: left;
+    margin-left: 44px;
+    text-align: center;
+}
+
+#PhoneFlow_step1, #PhoneFlow_step2, #PhoneFlow_step3 {
+    margin-top: 20px;
+    display: inline;
+    opacity: 0;
+}
+
+#advantage_img1, #advantage_img2, #advantage_img3, #advantage_img4, #OnlineFlow_img1, #OnlineFlow_img2, #OnlineFlow_img3, #PhoneFlow_img1, #PhoneFlow_img2, #PhoneFlow_img3 {
+    opacity: 0;
+}

@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/*---------- reset ----------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; margin:0; padding:0}article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video{display:block}ul, li, ol{list-style:none; background:transparent}h1, h2, h3, h4, h5, h6{font-weight:400; clear:both}a, a:hover{text-decoration:none}
+blockquote{quotes:none}blockquote:before, blockquote:after, q:before, q:after{content:none}table{border-collapse:collapse; border-spacing:0}input[type="submit"]:focus, input[type="button"]:focus{outline:none}:focus{outline:0}a img, input[type="submit"]::-moz-focus-inner, input[type="button"]:-moz-focus-inner{border:0}
+html, body {width:100%;height:100%}
+body{font-family:Arial, Microsoft YaHei, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+.clear{background:none; border:0; clear:both; display:block; float:none; font-size:0; overflow:hidden; visibility:hidden; width:0; height:0; margin:0; padding:0}
+input,a{outline:none;}
+
+#form1{display:none;}
+.mobilecontent table{border-collapse:collapse;border-spacing:0;width:100%;}
+.mobilecontent{width:100%;overflow:hidden;padding:0 0 10px;font-size:100%;max-width:640px;margin:0 auto;display:block;background:url(../images/cardevent_content_mobile.jpg)}
+.mobilecontent .forminfo{width:80%;margin:0px auto;margin-top:10%;background:#fff;padding:20px;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;}
+.mobilecontent th, .mobilecontent td{text-align:left;vertical-align:middle;font-weight:normal;color:#535353;}
+.mobilecontent .txt{width:100%;}
+.mobilecontent .error{color:#f00;font-size:90%;display:none;}
+.mobilecontent .txtalert{font-size:90%;}
+.mobilecontent .tnc{font-size:90%;color:#bbb;}
+.mobilecontent .tnc ol{margin:5px 0 0 20px;}
+.mobilecontent .tnc ol li{list-style-type:decimal;padding:2px 0;line-height:140%;}

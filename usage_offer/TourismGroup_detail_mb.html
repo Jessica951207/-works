@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Travelzoo精选度假产品 花旗专享6%额外立减</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width" name="viewport">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="stylesheet" href="fancybox/fancybox.css"  type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="fancybox/mousewheel.js"></script>
+    <script type="text/javascript" src="fancybox/fancyboxmin.js"></script>
+    <script type="text/javascript">
+        function set_size() {
+            $("html").css({"font-size": $(window).width() >=750 ? 22 : ($(window).width() / 750 * 22)})
+        }
+        $(window).resize(set_size);
+
+        $(document).ready(function(){
+            var sh = $(window).height();
+            var i=0;
+            set_size();
+
+            $('#inline1').height(sh*0.7);
+            $(".Tips").fancybox({
+                'titlePosition': 'inside',
+                'transitionIn': 'none',
+                'transitionOut': 'none'
+            });
+            $('.popup_alert').fancybox({
+                scrolling: 'no',
+                onStart: function (e) {
+                    $('#popuplink').attr('href', $(e).attr('link'));
+                    $('#popup').show();
+                }, onClosed: function () {
+                    $('#popup').hide();
+                }
+            });
+
+            $('#list').click(function(){
+                $('#shop_list').toggle();
+                if($('#shop_list').is(':visible')){
+                    $(this).find('span').attr('id','rotate_gt');
+                }else{
+                    $(this).find('span').removeAttr('id');
+                }
+            });
+        });
+    </script>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        html{font-family: Arial, Microsoft YaHei, sans-serif;}
+        body{margin: 0; padding: 0;}
+        img{display: block; border: none; width: 100%;}
+        a{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+        #outBox{width: 100%; max-width: 640px; margin: 0 auto; overflow: hidden; padding-bottom: 3%; position: relative;}
+
+        .content_box{width: 94%; margin: 0 auto;border: 0.05rem solid #d9d9d9;border-radius: 1rem;box-shadow: #d5d5d5 0 0 0.5rem; margin-bottom: 10%;position: relative;}
+		.content_img{position: absolute;top: -1rem;}
+		
+		.content span{color: #231814;}
+		.campaign_intro{width: 95%;margin: 0 auto;color: #585657; font-size: 1rem;margin-top: 40%;}
+		.campaign_intro p{align-self: center;}
+		.campaign_intro img{margin-left: 3%;margin-right: 3%;padding-top: 1%;width: 6.5%;align-self: center;}
+        .outbox{background: #F7F8F8;}
+		.brand_detail{width: 100%;margin: 0 auto;font-size: 0.7rem;}
+		.brand_detail p{font-size: 1.2rem;color: #59575;padding: 5% 0 3% 2%;}    
+		
+     
+        
+        #inline1 ol ul li{list-style: none !important;}
+
+        .inside_tips{font-size: 1rem; color: #5a5a5a; width: 100%; margin-top: 1rem;}
+        .inside_tips ol{margin-left: 5%; width: 95%;}
+        .inside_tips ol li{margin-top: 3px;}
+        .tips_box div{margin: -10px 0 0 10px;}
+
+        #link_box{margin-top: 1rem;}
+        #link_box a{float: right; display: block; text-decoration: underline; outline: none; color: #595757; font-size: 0.8rem;}
+
+		.shop{display: flex;justify-content: flex-end;}
+        .shop_ad{ margin-top: 5%; color: #595758; text-decoration: underline; font-size: 1rem;margin-left: 5%;margin-bottom: 6%;}
+		.content{width: 93%;margin: 0 auto;margin-bottom: 5%;color: #575757; }
+		.slogan{margin: 3% auto;font-size: 1rem;color:#595757;margin-top: 5%}	        
+        .slogan span{color:#02bdf4;}
+		.slogan_one{font-size: 1.2rem;margin-bottom: 3%;color: #010101;}
+		.content-border{border-bottom: 0.05rem solid #d5d5d5;margin-bottom: 8%;}
+		.content_tip{font-size: 0.8rem;}
+		.content_tip p{margin-bottom: 3%;}
+		.content_tip ol{padding-left: 4%;}
+		.content_tip ol li{line-height: 1.6rem;}
+    </style>
+</head>
+<body>
+	<div id="outBox">
+   		<img src="images/TGroup_detail_mb_01.jpg">
+		<div class="content content-border">
+            <p class="slogan">即日起，通过花旗银行与Travelzoo旅游族的指定网页在线预订，并在付款方式中选择花旗银行信用卡，输入专属优惠码“TZCITI18”，即可享受会员价<span>额外再减6%</span>优惠！</p>
+			<p class="slogan_one">推荐套餐</p>
+     	</div>
+		
+		<div class="content_box">		
+			<img src="images/TGroup_detail_mb_04.jpg" alt="" class="content_img">
+			<div class="campaign_intro">
+				<p class="title">1晚小住、2晚度假、4人同行，三种方案灵活选，吃免费蟹宴，送糖果礼盒，享头部护理，挑个周末说走就走！</p><br>
+				<p>适用日期：即日起至2019年2月28日（￥899 套餐仅适用至2019年1月31日）</p>
+				<p>预订日期：即日起至2019年2月25日（请提前至少3天预订）</p>
+				<div class="shop">
+					<a href="#popup" link="https://www.travelzoo.com/cn/local-deals/EastCN/Getaway/298406/?source=citiwc_9&utm_source=citiwc_9&utm_campaign=michelin&utm_medium=bankpartner" class="popup_alert shop_ad" target="_blank">了解详情></a>			
+					<a href="#popup" link="https://www.travelzoo.com/cn/collection/hotels/editors-choice/?source=citiweb6&utm_source=citiweb6&utm_campaign=bankdiscount&utm_medium=bankpartner" class="popup_alert shop_ad" target="_blank">更多套餐></a>				
+				</div>
+			</div>			    
+		</div>
+		
+		<div class="content_box">		
+			<img src="images/TGroup_detail_mb_07.jpg" alt="" class="content_img">
+			<div class="campaign_intro">
+				<p class="title">游“富氧之都”，享受惬意温泉及特色美食！另附文化名城“出行小贴士”，尝本地特色小吃，玩《爸爸去哪儿》同款。</p><br>
+				<p>适用日期：即日起至2018年12月31日</p>
+				<p>预订日期：即日起至2018年12月30日（请提前至少1天预订）</p>
+				<div class="shop">
+					<a href="#popup" link="https://www.travelzoo.com/cn/local-deals/Guangdong/Getaway/297261/?source=citiwc_9&utm_source=citiwc_9&utm_campaign=michelin&utm_medium=bankpartner" class="popup_alert shop_ad" target="_blank">了解详情></a>			
+					<a href="#popup" link="https://www.travelzoo.com/cn/collection/hotels/editors-choice/?source=citiweb6&utm_source=citiweb6&utm_campaign=bankdiscount&utm_medium=bankpartner" class="popup_alert shop_ad" target="_blank">更多套餐></a>				
+				</div>
+			</div>			    
+		</div>
+		
+		<div class="content_box">		
+			<img src="images/TGroup_detail_mb_09.jpg" alt="" class="content_img">
+			<div class="campaign_intro">
+				<p class="title">海宁朗豪酒店豪华房1间2晚或2间1晚，每日前3间房预约免费升级至主卧套房。探访千年古城，一睹钱塘大潮，住宿城中地标。</p><br>
+				<p>适用日期：即日起至2019年1月31日</p>
+				<p>预订日期：即日起至2019年1月28日（请提前至少3天预订）</p>
+				<div class="shop">
+					<a href="#popup" link="https://www.travelzoo.com/cn/local-deals/EastCN/Getaway/298419/?source=citiwc_9&utm_source=citiwc_9&utm_campaign=michelin&utm_medium=bankpartner" class="popup_alert shop_ad" target="_blank">了解详情></a>			
+					<a href="#popup" link="https://www.travelzoo.com/cn/collection/hotels/editors-choice/?source=citiweb6&utm_source=citiweb6&utm_campaign=bankdiscount&utm_medium=bankpartner" class="popup_alert shop_ad" target="_blank">更多套餐></a>				
+				</div>
+			</div>			    
+		</div>
+		
+		<div class="content_box">		
+			<img src="images/TGroup_detail_mb_11.jpg" alt="" class="content_img">
+			<div class="campaign_intro">
+				<p class="title">摩登外观和尊崇服务，倡导“新享乐派”的社群文化，优越的地理位置以及时髦的入住体验，让CHAO迅速成为时下“网红”酒店，入住还可享受免费迷你吧、小食和周六影院。</p><br>
+				<p>适用日期：即日起至2018年12月31日 </p>
+				<p>预订日期：即日起至2018年12月16日（请提前至少14天预订）</p>
+				<div class="shop">
+					<a href="#popup" link="https://www.travelzoo.com/cn/local-deals/Beijing-Hebei/Getaway/299035/?source=citiwc_9&utm_source=citiwc_9&utm_campaign=michelin&utm_medium=bankpartner" class="popup_alert shop_ad" target="_blank">了解详情></a>			
+					<a href="#popup" link="https://www.travelzoo.com/cn/collection/hotels/editors-choice/?source=citiweb6&utm_source=citiweb6&utm_campaign=bankdiscount&utm_medium=bankpartner" class="popup_alert shop_ad" target="_blank">更多套餐></a>				
+				</div>
+			</div>			    
+		</div>
+		
+		<div class="content">             
+            <div class="brand_detail">
+				<p>预订流程：</p>
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-top: 0.05rem dashed #a7a7a7;padding-top: 3%;padding-bottom: 5%;">
+                    <tr>
+						<td>点击<span>“了解详情”</span>或<span>“更多套餐”</span>至活动指定网页</td>
+						<td width="19"><img src="images/TGroup_detail_14.jpg" alt=""></td>
+						<td>选择合适的旅行套餐后，点击<span>“立即预订”</span></td>
+						<td width="19"><img src="images/TGroup_detail_14.jpg" alt=""></td>
+						<td>支付页面<span>“折扣代码”</span>处输入获得的<span>专属优惠码</span></td>
+						<td width="19"><img src="images/TGroup_detail_14.jpg" alt=""></td>
+						<td>点击<span>“应用”</span>，价格即显示为立减后的价格</td>
+						<td width="19"><img src="images/TGroup_detail_14.jpg" alt=""></td>
+						<td>按照立减后的价格继续完成支付</td>			
+					</tr>		
+                </table>				
+            </div>  
+			<div class="content_tip">
+				<p>温馨提示：</p>
+				<ol>
+					<li>本活动适用于花旗银行（中国）有限公司（以下简称“卡中心”）发行的有效个人信用卡。</li>
+					<li>优惠码有效期至2019年8月31日。</li>
+					<li>凭花旗信用卡专属优惠码“TZCITI18”通过活动页面进行预订，除享受现有超值优惠外，还可获得预订价的额外6%立减优惠。</li>
+					<li>本活动所指“6%立减”，即对客户符合活动规则的预订度假产品金额，按照6%直接在订单中进行优惠立减。</li>
+					<li>产品取消或者更改请直接通过Travelzoo旅游族网页进行，持卡人可查询购买确认邮件或联系Travelzoo旅游族客服400 801 3388咨询相关信息。</li>
+				</ol>
+			</div>
+			<div id="link_box">
+				<a id="rule" class="Tips" href="#inline1" target="_blank">规则条款＞</a>
+				<div style="clear: both;"></div>
+			</div>
+        </div>	
+    </div>
+</div>
+
+<div style="display:none;">
+    <div id="inline1" style="padding: 1%;">
+        <h2 style="margin: 2% 0; padding: 0;">规则条款：</h2>
+        <ol style="margin: 0; padding: 0; margin-left: 8%;">
+            <ol style="margin-bottom:30px">
+				<li>本活动适用于花旗银行（中国）有限公司合法核发的所有花旗银行信用卡的持卡人，包括主卡和附属卡。</li>
+				<li>即日起至2019年2月28日（含起讫日）之间，花旗信用卡持卡人使用花旗信用卡在Travelzoo指定活动页面全额结清本活动涉及的项目费用，方可享受相应优惠。</li>
+				<li>花旗信用卡持卡人可享受指定套餐。</li>
+				<li>除特别注明外，本优惠不可与其他优惠、折扣或优惠券同时使用。不可转让予其他人、不可兑换现金或换取其他优惠。</li>
+				<li>本活动中有关礼品、产品或服务由相关服务商、商户或供应商提供。持卡人应当自行决定是否使用该等相关服务商，商户或供应商以提供商品或服务。花旗银行（中国）有限公司不对该等服务商，商户或供应商所提供的商品质量或服务水平等提供任何保证，亦不就有关商品或服务引起的有关事宜或任何损害承担任何责任。对此，持卡人应自行直接接洽该等服务商、商户或供应商，由该等服务商、商户或供应商负责处理、解决。</li>
+				<li>在法律允许范围内，本活动的解释权归花旗银行所有。花旗银行有权在中国法律允许的范围内修改本活动规则，并于花旗银行网站公告或领用合约规定的其他相关渠道公告后生效，敬请持卡人留意。</li>
+            </ol>
+        </ol>
+    </div>
+</div>
+
+<div style="display:none;">
+    <div id="inline2" style="padding: 1%;">
+        <img src="images/Qkuts_shop_ad_mb_02.jpg" alt="">
+    </div>
+</div>
+
+<div id="popup" style="display:none; overflow:hidden;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr align="left" valign="top">
+            <td style="font-size:12px;font-family:Arial;"><span style="color:#06c">您即将离开花旗网站，前往第三方网站。</span><br>
+                You are now entering a third party site.</td>
+        </tr>
+        <tr align="left" valign="top">
+            <td class="font">&nbsp;</td>
+        </tr>
+        <tr align="left" valign="top">
+            <td style="line-height:150%;font-size:12px;font-family:Arial;"><span style="color:#06c">所有您在第三方网站提交的信息将由该网站依据其隐私、保密和安全条款执行并负责。</span><br>
+                All information you provide there will be subject to privacy, confidentiality, and security terms of the applicable third party site.</td>
+        </tr>
+        <tr align="left" valign="top">
+            <td class="font">&nbsp;</td>
+        </tr>
+
+        <tr align="left" valign="top">
+            <td class="font"><hr size="1" color="CCCCCC" width="100%"></td>
+        </tr>
+        <tr align="center" valign="top">
+            <td class="font">
+                <a id="popuplink" href="#" onClick="javascript:$.fancybox.close();" target="_blank" class="button" style="float:left;margin-left:20%;font-family:Arial;font-size:9pt;font-weight:bolder;color:#fff;width:40px;height:12pt;background-color:#009;border:1px solid #09f;display:block;padding-top:1px; margin-top: 10px;">是 Yes</a>
+                <a href="javascript:$.fancybox.close();" class="button" style="float:right;margin-right:20%;font-family:Arial;font-size:9pt;font-weight:bolder;color:#fff;width:40px;height:12pt;background-color:#009;border:1px solid #09f;display:block;padding-top:1px; margin-top: 10px;">否 No</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript" src="/sim/chinese/js/SC_code1.js"></script>
+<script type="text/javascript" src="/sim/chinese/js/page_code.js"></script>
+</body>
+</html>

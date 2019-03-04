@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>花旗联手迈生活 带您畅游美帝</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="fancybox/fancybox.css"  type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="fancybox/fancyboxmin.js"></script>
+
+    <script>
+        function IsPC()
+        {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href="MilesLife_detail_mb.html"
+        };
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+                        
+            $(".tip_popup").fancybox({
+                'titlePosition': 'inside',
+                'transitionIn': 'none',
+                'transitionOut': 'none'
+            });
+            
+            $('.popup_alert').fancybox({
+				scrolling: 'no',
+		        onStart: function (e) {
+		            $('#popuplink').attr('href', $(e).attr('link'));
+		            $('#popup').show();
+		        }, onClosed: function () {
+		            $('#popup').hide();
+		        }
+			});
+        });
+    </script>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        a,area{outline: none;}
+        #outbox-ray{width:783px;margin:0 auto;font-family: Arial, Microsoft YaHei, sans-serif;padding-bottom: 30px;}
+        .content-ray{width:701px;margin: 0 auto;border-top: 1px solid #014785;margin-bottom: 50px;}
+		.brand_title{background: #014785;width: 210px;height: 37px;margin: 0 auto; font-size: 24px; color: #ffffff;text-align: center;}
+		.brand_intro{color: #585657; font-size: 18px;display: flex;}
+		.brand_intro img{margin-left: 30px;margin-right: 10px;padding-top: 2px;}
+		.outbox{background: #F7F8F8;}
+		.brand_detail{width: 701px;margin: 0 auto;}
+		.brand_detail p{font-size: 24px;color: #59575;padding: 20px 0 15px 0;}		
+        .slogan{width: 690px;margin: 0 auto;font-size: 16px;color:#595757;margin-top: 30px}
+		
+        .slogan span{font-size: 20px;}
+        .slogan span{color:#004187;}
+        .shops-details img{padding: 5px 0;}
+        .shops-details span{font-size:30px;color:#004187;}
+        .more-ray u{color:#77ccf4;}
+        .btn-ray{margin-top: 20px;}
+        .btn-ray ul{list-style: none;padding-bottom: 20px;}
+        .btn-ray ul li{float: right;}
+
+        .inside_tips{font-size: 14px; color: #5a5a5a; margin-top: 15px;}
+        .inside_tips ol{margin-left: 15px;}
+        .inside_tips ol li{margin-top: 3px;}
+
+        
+        
+        
+
+        #inline1 ol ul li{list-style: none !important;}
+        
+		.shop{display: flex;justify-content: flex-end;}
+        .shop_ad{margin-top: 18px; color: #00BDF2; text-decoration: underline; font-size: 18px;margin-left: 30px;}
+    </style>
+</head>
+<body>
+    <div id="outbox-ray">
+        <img src="images/MLife_detail_01.jpg">
+        <div class="content-ray">
+            <div class="brand_title">
+				<p>美联航购票优惠</p>
+			</div>
+			<img src="images/MLife_detail_04.jpg" alt="">
+			<div class="brand_intro">
+				<img src="images/MLife_detail_07.jpg" alt="">
+				<p>预定时间：即日起至2018年12月31日</p>
+			</div>
+			<div class="brand_intro">
+				<img src="images/MLife_detail_10.jpg" alt="">
+				<p>出行时间：即日起至2019年6月30日（部分日期除外，详见“了解详情”页）</p>
+			</div>
+        </div>
+		<div class="content-ray">
+            <div class="brand_title">
+				<p>迈生活支付权益</p>
+			</div>
+			<img src="images/MLife_detail_12.jpg" alt="">
+			<div class="brand_intro">
+				<img src="images/MLife_detail_07.jpg" alt="">
+				<p>活动时间：即日起至2018年12月的每月10日至20日</p>
+			</div>
+			<div class="shop">
+				<a href="#popup" link="https://www.mileslife.com/promotion/invitation/?code=CITI-UA" class="popup_alert shop_ad" target="_blank">立即参与></a>			
+				<a href="#popup" link="https://www.mileslife.com/staticpage/event/citigroup.html#/" class="popup_alert shop_ad" target="_blank">了解详情></a>				
+			</div>
+
+        </div>
+		
+        <div class="outbox">             
+            <div class="brand_detail">
+				<p>参与方式：</p>
+                <table cellpadding="0" cellspacing="0" border="0" width="701" style="border-top: 1.5px dashed #a7a7a7;padding-top: 30px;padding-bottom: 20px;">
+                    <tr>
+						<td>			
+							<img src="images/MLife_detail_14.jpg" alt="">
+						</td>
+						<td style="color: #585657;" valign="top">
+							点击“立即参与”按钮验证您的花旗信用卡并获取美联航专属购票优惠码及迈生活APP花旗持卡人专属航空里程券<br><br>
+							复制您的购票优惠码前往美联航官方网站www.united.com，点击“预订旅行”板块中
+“所有搜索选项”展开订票页面，选择您的出行时间、地点、输入优惠码享受购票权益<br><br><br>
+							购买商务舱的额外5,000里程奖励将在您所购机票成行后的5个工作日内到账<br><br><br>
+							下载迈生活APP于每月10日至20日参与花旗持卡人专属3倍里程活动
+						</td>			
+					</tr>		
+                </table>				
+            </div>                     
+        </div>
+		<div class="slogan">
+			<p>温馨提示：更多活动细则请点击至“了解详情”页查询。</p>
+		</div>
+		 <div class="btn-ray">
+                <ul>
+                    <li><a class="tip_popup" href="#inline1"><img src="images/MLife_detail_19.jpg"></a></li>
+                    <li><a href="/sim/ICARD/cardoffer.htm" target="_blank"><img src="images/MLife_detail_18.jpg"></a></li>
+                </ul>
+            </div> 
+    </div>
+    
+    <div style="display:none;">
+        <div id="inline1" style="width:600px;padding-right:10px;overflow:auto;font-size:12px;color:#7f7f7f;line-height:20px;font-family: Arial, Microsoft YaHei, sans-serif;">
+            <h2>规则条款：</h2>
+            <ol style="margin-bottom:30px">
+				<li>本活动适用于花旗银行（中国）有限公司合法核发的所有花旗银行信用卡的持卡人，包括主卡和附属卡。</li>
+				<li>即日起至2019年6月30日（含起讫日）之间，花旗信用卡持卡人使用花旗信用卡在迈生活指定活动页面全额结清本活动涉及的项目费用，方可享受相应优惠。</li>
+				<li>花旗信用卡持卡人可享受指定套餐。</li>
+				<li>除特别注明外，本优惠不可与其他优惠、折扣或优惠券同时使用。不可转让予其他人、不可兑换现金或换取其他优惠。</li>
+				<li>本活动中有关礼品、产品或服务由相关服务商、商户或供应商提供。持卡人应当自行决定是否使用该等相关服务商，商户或供应商以提供商品或服务。花旗银行（中国）有限公司不对该等服务商，商户或供应商所提供的商品质量或服务水平等提供任何保证，亦不就有关商品或服务引起的有关事宜或任何损害承担任何责任。对此，持卡人应自行直接接洽该等服务商、商户或供应商，由该等服务商、商户或供应商负责处理、解决。</li>
+				<li>在法律允许范围内，本活动的解释权归花旗银行所有。花旗银行有权在中国法律允许的范围内修改本活动规则，并于花旗银行网站公告或领用合约规定的其他相关渠道公告后生效，敬请持卡人留意。</li>
+            </ol>
+        </div>
+    </div>
+
+    <div style="display:none;">
+        <div id="inline2" style="height: 450px;">
+            <img src="images/Qkuts_shop_ad_pc_02.jpg" alt="">
+        </div>
+    </div>
+
+    <div id="popup" style="display:none; overflow:hidden;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr align="left" valign="top">
+                <td style="font-size:12px;font-family:Arial;"><span style="color:#06c">您即将离开花旗网站，前往第三方网站。</span><br>
+                    You are now entering a third party site.</td>
+            </tr>
+            <tr align="left" valign="top">
+                <td class="font">&nbsp;</td>
+            </tr>
+            <tr align="left" valign="top">
+                <td style="line-height:150%;font-size:12px;font-family:Arial;"><span style="color:#06c">所有您在第三方网站提交的信息将由该网站依据其隐私、保密和安全条款执行并负责。</span><br>
+                    All information you provide there will be subject to privacy, confidentiality, and security terms of the applicable third party site.</td>
+            </tr>
+            <tr align="left" valign="top">
+                <td class="font">&nbsp;</td>
+            </tr>
+
+            <tr align="left" valign="top">
+                <td class="font"><hr size="1" color="CCCCCC" width="100%"></td>
+            </tr>
+            <tr align="center" valign="top">
+                <td class="font">
+                    <a id="popuplink" href="#" onClick="javascript:$.fancybox.close();" target="_blank" class="button" style="float:left;margin-left:20%;font-family:Arial;font-size:9pt;font-weight:bolder;color:#fff;width:40px;height:12pt;background-color:#009;border:1px solid #09f;display:block;padding-top:1px; margin-top: 10px;">是 Yes</a>
+                    <a href="javascript:$.fancybox.close();" class="button" style="float:right;margin-right:20%;font-family:Arial;font-size:9pt;font-weight:bolder;color:#fff;width:40px;height:12pt;background-color:#009;border:1px solid #09f;display:block;padding-top:1px; margin-top: 10px;">否 No</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script language="JavaScript" type="text/javascript" src="/sim/chinese/js/SC_code1.js"></script>
+<script language="JavaScript" type="text/javascript" src="/sim/chinese/js/page_code.js"></script>
+</html>
