@@ -1,0 +1,123 @@
+#layout{width: 100%; max-width: 750px; margin: 0 auto;overflow: hidden;}
+*{margin: 0; padding: 0;}
+body{font-family: Microsoft YaHei, Arial, sans-serif;}
+img{display: block; border: none; width: 100%;}
+.h_title{font-size: 1.9rem;color: #b4975a;margin-bottom: 2%;}
+.p_txt{font-size: 1.7rem;color: #777777;line-height: 2.8rem;}
+.p_txt span{font-size: 1.8rem;color: #b4975a;font-weight: bold;}
+
+.centerContent{width: 94%; margin: 0 auto;background: #ffffff;border: 1px solid #b4975a;border-radius: 1rem;padding: 2% 0;margin-bottom: 5%;}
+
+.slideContent{width: 94%; margin: 0 auto;}
+.slideArea{ margin-top: 2rem;}
+.slideTitle{font-size: 1.7rem; color: #bfa253; text-align: center;}
+.slideTitle .titleIcon{width: 40%; margin: 0 auto;}
+.slideTitle .title_icon{margin-top: 10%;margin-bottom: 5%;}
+.slideTitle .titleTxt{display: inline-block; padding: 1rem 0;}
+
+.swiper-container{margin-top: 0.8rem;}
+.eventSlide{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.7rem;
+    padding-bottom: 6.5rem;   
+    cursor: pointer;
+	text-align: center;
+	border: 1px solid #b4975a;
+	border-radius: 1rem;
+	padding: 4% 0;
+	background-color:rgba(142,111,50,0.3);		
+}
+
+
+.eventSlide .eventTitle{color: #8e6f32; font-size: 2rem; font-weight: bold; padding: 2% 0;}
+.eventSlide .eventTime{ color: #777777; line-height: 2.7rem; font-size: 1.7rem;}
+
+.swiper-button-next, .swiper-button-prev{
+    width: 2.8rem;
+    height: auto;
+    background: rgba(0,0,0,0.4);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    margin-top: unset;
+    outline: none;
+    border: none;
+}
+.swiper-button-prev{left: 0;}
+.swiper-button-next{right: 0;}
+.eventSlide .liveAvator{margin-bottom: 0.7rem;}
+.slideTips{margin-top: 1.4rem; color: #313131;}
+.slideTips .tip_code{width: 20%; margin: 1.2rem auto; margin-bottom: 0;}
+.protocolArea{padding: 2rem 0; font-size: 1rem; line-height: 140%; color: #313131; font-size: 0.9rem;}
+
+.popup{position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 999; background: rgba(0,0,0,0.4); font-size: 1rem; display: none;}
+.popupContent{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 80%;
+    max-width: 480px;	
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    padding-bottom: 1.5rem;
+    border: solid 2px #bfa253;
+    background-size: auto;
+    border-radius: 10px;
+    background: #fff;
+	overflow: auto;
+	color: #333333;
+	font-size:1.7rem; 
+	line-height: 2.5rem;
+}
+.popupContent .closePopup{position: absolute; width: 1rem; top: 2.3rem; right: 1.5rem; cursor: pointer;}
+
+.popupReserve{display: block; width: 40%; padding: 0.8rem; font-weight: bold; color: #fff; text-decoration: none; background: #8e6f32; text-align: center; margin: 0 auto; margin-top: 1.5rem;border-radius: 6px;}
+
+
+#livePopup .popupReserve{width: 50%;}
+
+.slideBooking{width: 94%;margin: 0 auto;background-color: #8e6f32;color: #ffffff;padding: 2% 0;margin-top: 11%;text-align: center;border-radius: 0.8rem;font-size: 2rem;}
+.slideContent .callMessage{font-size: 1.7rem;color: #727272;line-height: 2rem;padding-top: 3%;padding-bottom: 7%;}
+a{text-decoration: none;}
+.swiper-pagination-bullet-active{background: #8e6f32;}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{bottom: -19px;z-index: 5}
+.swiper-container{overflow: visible;}
+.swiper-slide-active{background: rgba(255,255,255,0.8);}
+
+.dollarTop,.depositTop,.BFCTop,.stadiumTop,.clarinTop{background: #8e6f32;padding: 5% 0;border-radius: 3px;text-align: center;color: #ffffff;font-size: 2rem;}
+.dollarTitle,.BFCTitle,.stadiumTitle,.clarinsTitle{width: 30%;margin: 0 auto;background: #b4975a;padding: 2% 0;border-radius: 5px;text-align: center;color: #ffffff;font-size: 2rem;margin-top: 8%;}
+.dallorContent ol{padding:1.5rem;padding-left: 3rem;line-height: 2.8rem;}
+
+.td_intro,.td_intro2{color: #ffffff;background: #b4975a;border-radius: 6px;font-size: 1.7rem; text-align: center;padding: 2% 0;}
+
+.depositContent{padding:1.5rem;line-height: 1.8rem;font-size: 1.7rem;}
+
+.BFCContent,.stadiumContent,.clarinsContent{width: 90%;border: 1px solid #b4975a;border-radius: 5px;margin: 5% auto;margin-top: 13%; position: relative;}
+.BFCTitle,.stadiumTitle,.clarinsTitle{margin-top: 0; position: absolute;top: -15%;left: 35%;}
+.BFCinfro,.stadiuminfro,.clarinsinfro{padding: 8% 5% 5% 5%;text-align: justify;}
+.BFCinfro span{color: #8e6f32;}
+.BFCEvent,.stadiumEvent{width: 90%;margin: 0 auto;}
+.BFCEvent,.stadiumEvent p{margin-bottom: 2%;line-height: 2.5rem;}
+
+.stadiuminfro span{color: #8e6f32;}
+.stadiumTip,.clarinsTip,.clarinsQR{width: 90%;margin: 5% auto;}
+.stadiumTip,.clarinsTip ul {padding-left: 6%;color: #8d8d8d;}
+.stadiumTip,.clarinsTip ul li{margin-bottom: 2%;text-align: justify;font-size: 1.6rem;}
+
+.clarinsContent{margin-top: 10%;padding: 3% 1% 3% 3%;text-align: justify;}
+.clarinsinfro{text-align: center;}
+.clarinsQR{color: #8e6f32; text-align: center;}
+
+@media screen and (max-width: 750px){
+    .swiper-button-next, .swiper-button-prev{width: 4rem;}
+    .popupContent .closePopup{width: 2rem;}
+}
