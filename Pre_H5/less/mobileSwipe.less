@@ -1,0 +1,63 @@
+#transform(@transform_kind){
+  -webkit-transform:@transform_kind;
+  -moz-transform:@transform_kind;
+  -o-transform:@transform_kind;
+  -ms-transform:@transform_kind;
+  transform:@transform_kind;
+}
+#animation(@animation_kind){
+  -webkit-animation:@animation_kind;
+  -moz-animation:@animation_kind;
+  -o-animation:@animation_kind;
+  -ms-animation:@animation_kind;
+  animation:@animation_kind;
+}
+.keyframe(@name,@b_step,@e_step){
+  @-webkit-keyframes @name{
+    from { -webkit-transform:@b_step; }
+    to { -webkit-transform:@e_step; }
+  }
+  @-moz-keyframes @name{
+    from { -moz-transform:@b_step; }
+    to { -moz-transform:@e_step; }
+  }
+  @-o-keyframes @name{
+    from { -o-transform:@b_step; }
+    to { -o-transform:@e_step; }
+  }
+  @-ms-keyframes @name{
+    from { -ms-transform:@b_step; }
+    to { -ms-transform:@e_step; }
+  }
+  @keyframes @name{
+    from { transform:@b_step; }
+    to { transform:@e_step; }
+  }
+}
+
+html,body{width: 100%; height: 100%; overflow: hidden;}
+.content_holder{width: 100%; height: 100%; position: relative; max-width: 750px; margin: 0 auto;
+  section{
+    width: 100%; height: 100%;
+    position: absolute; top: 0; left: 0; z-index: 10;
+    #transform(translate3d(0,100%,0));
+    .section{width: 100%; height: 100%;}
+  }
+  section:nth-child(1){
+    #transform(translate3d(0,0,0));
+    z-index: 15;
+  }
+
+  .nextsection{
+    #animation(nextsection 0.5s forwards);
+    #transform(translate3d(0,100%,0));
+  }
+  .keyframe(nextsection,translate3d(0,100%,0),translate3d(0,0,0));
+
+  .prevsection{
+    #animation(prevsection 0.5s forwards);
+    #transform(translate3d(0,-100%,0));
+  }
+  .keyframe(prevsection,translate3d(0,-100%,0),translate3d(0,0,0));
+}
+
