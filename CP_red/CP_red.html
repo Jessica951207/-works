@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="sde_all.js" charset="gb2312"></script>
+    <link rel="stylesheet" type="text/css" href="sde_style_v1.4.css">
+    <title></title>
+
+    <script type="text/javascript">
+        $(function(){
+            var bannerWidth=398,
+                slideDuration=4000,
+                animateDuration=500,
+                bannerIndex1 = 0,
+                UL1 = $('#cSlide_box1'),
+                count1=$('#cSlide_box1').children('.cSlide_item').length,
+                isSlide = false;
+
+            $('#cSlide_box1').css('width',bannerWidth*(count1+2));
+
+            for (var n = 0; n < count1; n++) {
+                $('#item_point1').append('<li></li>')
+            }
+            $('#item_point1>li').eq(0).css({"margin-left": "0", "background": "#fff"});
+
+
+            $('.cSlide_item:last').clone().prependTo(UL1);
+            $('.cSlide_item').eq(1).clone().appendTo(UL1);
+            function setTimer() {
+                Timer = window.setInterval(function () {
+                    ++bannerIndex1;
+                    slide();
+                }, slideDuration);
+            }
+
+            function clearTimer() {
+                if (window.Timer)
+                    window.clearInterval(Timer);
+            }
+
+            function resetTimer() {
+                clearTimer();
+                setTimer();
+            }
+
+            setTimer();
+
+            $("#item_point1 li").click(function () {
+                bannerIndex1 = $(this).index();
+                $("#item_point1 li").css('background', 'rgba(0,0,0,0.4)');
+                $(this).css("background-color", "#fff");
+                slide();
+                resetTimer();
+            });
+
+            function slide() {
+                if (isSlide)return;
+                isSlide = true;
+
+                $("#cSlide_box1").stop(true, true).animate({
+                        'margin-left': (bannerIndex1 + 1) * -bannerWidth
+                    }, animateDuration,
+                    function () {
+                        if (bannerIndex1 > count1 - 1) {
+                            $("#cSlide_box1").css({
+                                'margin-left': -bannerWidth
+                            });
+                            bannerIndex1 = 0;
+                        }
+                        else if (bannerIndex1 < 0) {
+                            $("#cSlide_box1").css({
+                                'margin-left': count1 * -bannerWidth
+                            });
+                            bannerIndex1 = count1 - 1;
+                        }
+                        isSlide = false;
+                    }
+                );
+
+
+                $("#item_point1 li").css('background', 'rgba(0,0,0,0.4)');
+                $("#item_point1 li").eq(bannerIndex1 > count1 - 1 ? 0 : bannerIndex1).css("background-color", "#fff");
+            }
+        });
+    </script>
+</head>
+<body>
+<div id="out_box">
+    <div id="nav_bar">
+        <ul class="first_nav">
+            <li class="first_nav_li">
+                <div class="first_nav_btn">甜蜜体验
+                    <span class="arrow_icon"></span>
+                    <ul class="second_nav">
+                        <li class="second_nav_li arrow_show">汇丰CP信用卡–红卡</li>
+						<li class="second_nav_li">甜蜜体验</li>
+                        <li class="second_nav_li">与TA互享</li>
+                        <li class="second_nav_li">甜蜜奖赏</li>
+                        <li class="second_nav_li">安心保障</li>
+                        
+                    </ul>
+                </div>
+            </li>
+            <li class="first_nav_li">
+                <div class="first_nav_btn">用卡须知
+                    <span class="arrow_icon"></span>
+                    <ul class="second_nav">
+                        <li class="second_nav_li arrow_show">卡面介绍</li>
+                        <li class="second_nav_li">卡片激活</li>
+                        <li class="second_nav_li">消费支付</li>
+                        <li class="second_nav_li">现金提取</li>
+                        <li class="second_nav_li">交易通知</li>
+                        <li class="second_nav_li">查询账单</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="first_nav_li" style="border-right-color: transparent;">
+                <div class="first_nav_btn">您还需要知道
+                    <span class="arrow_icon"></span>
+                    <ul class="second_nav">
+                        <li class="second_nav_li arrow_show">还款介绍</li>
+                        <li class="second_nav_li">分期还款</li>
+                        <li class="second_nav_li">现金分期</li>
+                        <li class="second_nav_li">收费标准</li>
+                        <li class="second_nav_li">还款须知</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="home_box">
+                <a href="SDE_detail_v1.4.html"><img src="http://img.cupdata.com/resource/bank/uploadFiles/fck/image/20161122090718.png"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="content_box">
+        <div class="arrow_box left_arrow_box">
+            <img src="http://img.cupdata.com/resource/bank/uploadFiles/fck/image/20161122090914.png" class="left_arrow">
+        </div>
+        <div class="arrow_box right_arrow_box">
+            <img src="http://img.cupdata.com/resource/bank/uploadFiles/fck/image/20161122090928.png" class="right_arrow">
+        </div>
+
+        <!--汇丰CP信用卡 – 红卡-->
+        <div class="content content1 first_content">
+            <!--汇丰CP信用卡 – 红卡-->
+            <div class="item first_item">
+                <h1 class="item_title">汇丰CP信用卡 – 红卡</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <p class="detail_content">汇丰CP信用卡红卡为一张人民币白金卡及一张万事达美元白金卡 （以下简称“汇丰CP卡-红卡”）。</p>                        
+                        <p class="detail_content">汇丰诚邀您浏览本用卡指南，即刻甜蜜体验、与TA互享、甜蜜奖赏、安心保障四类最甜蜜的权益。</p>
+                        <p class="detail_content2">感谢你对汇丰一如既往的支持！</p>
+                        <span class="detail_title">备注：</span>
+                        <p class="detail_content">1、各项权益适用条款及细则请登录汇丰中国官网信用卡相关页面
+<a href="http://creditcards.hsbc.com.cn" target="_blank">creditcards.hsbc.com.cn</a>上查询。
+                            <br>2、如果信用卡账户出现欠款逾期未缴、冻结等异常状态，可能造成部分或全部权益与优惠无法使用。</p>
+                    </div>
+                    <div class="right">
+                        <img src="images/cpRed_02.jpg" alt="" style="margin-top: 40px;margin-left: 6px; width:360px">
+                    </div>
+                </div>
+            </div>
+
+            <!--甜蜜体验-->
+            <div class="item">
+                <h1 class="item_title">甜蜜体验</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <p class="detail_content" style="font-size:15px;">汇丰中国与您一同创造甜蜜回忆，成为您幸福人生的见证者。</p><br>
+                        <p class="detail_content"><a href="#" target="_self">9元电影 约会必备 <span style="color: red;">&gt;</span></a></p>
+                        <p class="detail_content"><a href="#" target="_self">9元周花 装扮生活 <span style="color: red;">&gt;</span></a></p>
+                        
+                    </div>
+                    <div class="right">
+                        <div class="slideContent">
+                            <div id="cSlide1" class="cSlide">
+                                <ul id="cSlide_box1" class="cSlide_box">
+                                    <li class="cSlide_item">
+                                        <img src="images/cpRed_10.jpg" class="cSlide_img">
+                                    </li>
+                                    <li class="cSlide_item">
+                                        <img src="images/cpRed_11.jpg" class="cSlide_img">
+                                    </li>
+                                </ul>
+
+                                <ul id="item_point1" class="item_point"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+            <!--与TA互享-->
+            <div class="item">
+                <h1 class="item_title">与TA互享</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <p class="detail_content" style="font-size:15px;">关联TA的信用卡账户，送出你的心意。</p><br>
+                        <p class="detail_content"><a href="#" target="_self">权益礼物 赠送给TA <span style="color: red;">&gt;</span></a></p>
+						<p class="detail_content"><a href="#" target="_self">积分红包 节日必备 <span style="color: red;">&gt;</span></a></p>
+                        
+                    </div>
+                    <div class="right">
+                        <img src="images/cpRed_13.jpg" class="detail_img">
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!--甜蜜奖赏-->
+            <div class="item">
+                <h1 class="item_title">甜蜜奖赏</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <!--<p class="detail_content" style="font-size:15px;">多倍积分，兑换丰富礼品。</p>-->
+						<br>
+                        <p class="detail_content"><a href="#" target="_self">9积分 文艺阅读 <span style="color: red;">&gt;</span></a></p>
+						<p class="detail_content"><a href="#" target="_self">网络消费 双倍积分 <span style="color: red;">&gt;</span></a></p>
+                        
+                    </div>
+                    <div class="right">
+                        <img src="images/cpRed_12.jpg" class="detail_img">
+                    </div>
+                </div>                
+            </div>
+
+            <!--安心保障-->
+            <div class="item">
+                <h1 class="item_title">安心保障</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <p class="detail_content" style="font-size:15px;">汇丰中国为您提供48小时失卡保障，解除您的后顾之忧，让您更加安心享受您的甜蜜用卡体验！</p>
+                    </div>
+                    <div class="right">
+                        <img src="images/fashiontravel1.jpg" class="detail_img">
+                    </div>
+                </div>
+                                
+            </div>
+        </div>
+
+        <!--用卡须知-->
+        <div class="content content2">
+            <!--卡面介绍-->
+            <div class="item first_item">
+                <h1 class="item_title">卡面介绍</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <img src="images/cpRed_04.jpg" class="detail_img" style="margin-top: 20px;width: 400px;">
+                    </div>
+                    <div class="right">
+                        <img src="images/cpRed_06.jpg" class="detail_img" style="margin-top: 20px;width: 400px;">
+                    </div>
+                </div>
+            </div>
+
+            <!--卡片激活与密码设置-->
+            <div class="item">
+                <h1 class="item_title">卡片激活与密码设置</h1>
+                <div class="detail first_detail rightHigh">
+                    <div class="left">
+                        <p class="detail_content">为保障您的卡片在寄送途中的安全，您的卡片需激活后才可正常使用。我们建议您激活卡片后设置查询密码，以更方便的享受更多服务渠道。</p>
+                        <p class="detail_content">根据您的消费习惯，进一步设置消费交易确认方式和交易密码：</p>
+                        <p class="detail_content">-&nbsp;若您习惯凭“签名＋密码”确认消费交易，请开通消费“凭签名+密码”功能，并设置交易密码，则您刷卡消费时需输入您的交易密码，并在签账单上签名。该交易密码将同时适用于ATM机取现交易的确认。</p>
+                        <p class="detail_content">-&nbsp;若您习惯仅凭签名确认消费交易，则无需另行设置消费交易确认方式，只需设置交易密码，该交易密码将适用于ATM机取现交易的确认。</p>
+                        <p class="detail_content" style="font-weight: bold;">特别提醒：若您是通过汇丰信用卡官方网站渠道进行的申请，请您仔细阅读您收到的卡函附页的指示先前往指定的汇丰中国营业网点完成身份认证后，再进行卡片激活。</p>
+
+                    </div>
+                    <div class="right">
+                        <p class="detail_content part_end">您可以通过以下任意一种方式按照提示的步骤激活您的卡片，并根据您的需要设置查询密码和交易密码</p>
+                        <span class="detail_title">汇丰中国微信服务号，在线激活卡片</span>
+                        <p class="detail_content">1）打开微信，关注汇丰中国服务号：汇丰中国客户服务；<br>
+                            2）点击“信用卡”——〉“办卡与服务”——〉“卡片激活”，按页面要求输入卡片信息，即可立刻激活卡片；<br>
+                            3）继续设置查询密码，享受汇丰中国微信服务号随时在身边的服务。如需设置交易密码，请使用您在本行的预留电话号码致电400-86-95366（境外请致电+86 21-2053 4333）按照语音提示设置交易密码。</p>
+                        <img src="http://img.cupdata.com/resource/bank/uploadFiles/fck/image/20161122094042.jpg" class="detail_img">
+                        <p class="code_intro">扫码可关注汇丰中国微信服务号“汇丰中国客户服务”<br>
+                            确认关注前请仔细核对公众号名称</p>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="left">
+                        <span class="detail_title">汇丰中国手机银行——<br>
+                            可以激活卡片、设置查询密码、消费交易确认方式及交易密码</span>
+                        <p class="detail_content">1）扫描二维码下载汇丰中国手机银行；<br>
+                            2）点击下方导航栏上的“信用卡”图标，选择“更多功能”；<br>
+                            3）点击“卡片激活”，按页面要求输入卡片信息，即可立即激活卡片，并设置查询密码和交易密码；
+                        </p>
+                        <p class="detail_content">如您需要刷卡消费时凭密交易，请先用刚激活的信用卡注册汇丰中国手机银行，然后在“卡片管理”中选择对应的信用卡，进行“消费验密”设置。</p>
+                        <img src="images/hsbc_mb_bankcode.jpg" class="detail_img">
+                        <p class="code_intro">扫码可进入App Store或者腾讯应用宝下载。<br>
+                            安卓系统用户也可以在中国主流安卓应用市场（包括百度及华为），<br>
+                            搜索“汇丰银行”下载。</p>
+
+                        <span class="detail_title">客服热线——可以激活卡片、设置查询密码及交易密码</span>
+                        <p class="detail_content part_end">1）请用申请卡片预留的住宅电话或手机拨打400-86-95366 / 95366（境外请致电: +86-21-2053 4333）。根据语音提示输入相关信息完成卡片激活；<br>
+                            2）继续设置查询密码，享受信用卡服务；<br>
+                            3）根据您的需要可以按照语音提示设置交易密码；<br>
+                            4）如果信息校验失败可以转接给客户服务代表协助您激活卡片和完成相关密码设置。</p>
+                    </div>
+                    <div class="right">
+                        <span class="detail_title">汇丰信用卡手机银行——<br>
+                                可以激活卡片、设置查询密码、消费交易确认方式及交易密码</span>
+                        <p class="detail_content">1）扫描二维码下载汇丰信用卡手机银行；<br>
+                            2）点击“卡激活”，按页面要求输入卡片信息，即可立刻激活卡片；<br>
+                            3）继续设置查询密码，享受信用卡手机银行服务；<br>
+                            4）请您根据需要继续设置消费交易确认方式及交易密码。
+                        </p>
+                        <img src="http://img.cupdata.com/resource/bank/uploadFiles/fck/image/20161122093824.jpg" class="detail_img">
+                        <p class="code_intro">扫码可进入汇丰信用卡手机银行下载页面:<br>
+                            <a href="http://creditcards.hsbc.com.cn/portal/mb-app-download" target="_blank">http://creditcards.hsbc.com.cn/portal/mb-app-download</a>，<br>
+                            您可选择IOS版或安卓版应用程序下载。<br>
+                            下载前请仔细核对网址，如有任何疑问，请立即停止操作。</p>
+
+                        <span class="detail_title">汇丰信用卡个人网上银行——<br>
+                                可以激活卡片、设置查询密码及交易密码</span>
+                        <p class="detail_content">1）输入网址<a href="https://creditcards.hsbc.com.cn/perbank/" target="_blank">https://creditcards.hsbc.com.cn/perbank/</a>打开汇丰信用卡个人网上银行；<br>
+                            2）点击“信用卡激活”，按页面要求输入卡片信息，即可立刻激活卡片；<br>
+                            3）继续设置查询密码，享受汇丰中国信用卡网上银行服务；<br>
+                            4）请您根据需要继续设置消费交易确认方式及交易密码。</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--消费支付-->
+            <div class="item">
+                <h1 class="item_title">消费支付</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <span class="detail_title">1）全球消费，随心支付</span>
+                        <p class="detail_content">汇丰银行信用卡是国际通用的信用卡，您无须事先存入现金，即可在境内境外的支持银联、万事达支付网络的商户进行消费。卡片背面的<img src="http://img.cupdata.com/resource/bank/uploadFiles/fck/image/20161122092846.jpg" style="margin: 0 5px;">和<img src="http://img.cupdata.com/resource/bank/uploadFiles/fck/image/20161122092901.jpg" style="margin: 0 5px;">是非接支付标志，表示卡片可以采用非接支付方式完成消费。</p>
+                        <span class="detail_title">2）网上支付（不出现卡片的刷卡交易）</span>
+                        <p class="detail_content part_end">您可以选择开通第三方支付、银联在线支付和网上支付功能，就可以在网上商户支付完成购物。也可以通过客服热线设置或调整您网上支付和第三方支付的限额。若您在申请卡片时没有开通上述支付，但在后续信用卡使用过程中想开通上述支付，则需要来汇丰银行营业场所申请开通该功能。</p>
+                        <span class="detail_title">信用卡支持的网上支付方式有以下种类</span>
+                        <p class="detail_content">
+                            <span class="detail_list">&bull;&nbsp;一般网上支付</span>
+                            在网上直接输入16位卡号、姓名、有效期或CVV2等全部或部分信息就可以完成网上支付的交易。
+                        </p>
+                        <p class="detail_content">
+                            <span class="detail_list">&bull;&nbsp;3D验证支付</span>
+                            3D验证服务是一项网上支付安全验证服务，适用于所有汇丰银行万事达信用卡。您需要在购物时签约该项服务并提供您的预留手机号码。3D验证服务会验证您卡片相关的个性化信息和发到您预留手机上的一次性交易口令全面保障您的网上购物的安全。如果您购物的网上商店加入了此项服务，您便可以在此交易中享受到3D验证服务带来的购物安全保障。
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p class="detail_content">
+                            <span class="detail_list">&bull;&nbsp;支付宝快捷支付</span>
+                            是由支付宝提供的第三方支付服务。持卡人可通过在支付宝网站或者支付宝手机客户端签约该项服务，并绑定汇丰银行信用卡支付宝快捷支付，即可在之后的购物过程实现便利的在线支付。
+                        </p>
+                        <p class="detail_content">
+                            <span class="detail_list">&bull;&nbsp;银联在线支付</span>
+                            “银联在线支付”是中国银联为满足各方网上支付需求而打造的银行卡网上交易转接清算平台。持卡人可以在银联的网站提供信用卡信息和预留在银行的手机号码完成签约，待银联短信验证码验证成功后，完成认证。今后在使用银联在线支付时通过现有跨行交换网络发送个人银行卡信息与手机号码至发卡银行进行验证和授权处理，从而实现便利的在线支付。
+                        </p>
+                        <p class="detail_content">
+                            <span class="detail_list">&bull;&nbsp;财付通快捷支付</span>
+                            是由财付通提供的第三方支付服务，持卡人可以通过财付通网站或者微信客户端签约该项服务，并绑定汇丰中国信用卡微信快捷支付，即可在之后的购物过程中实现便利的在线支付。
+                        </p>
+
+                        <!--
+                        <span class="detail_title" style="font-size:14px;color:#000;">温馨提示：</span>
+                        <p class="detail_content">
+                            财付通快捷支付暂未上线，具体上线时间请留意汇丰中国微信服务号和信用卡官方网站的最新通知。
+                        </p>
+                        -->
+                    </div>
+                </div>
+            </div>
+
+            <!--现金提取-->
+            <div class="item">
+                <h1 class="item_title">现金提取</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <p class="detail_content">您可以使用信用卡在境内外支持银联支付网络或者境外支持万事达支付网络的自助柜员机提取现金。</p>
+
+                        <span class="detail_title">现金提取额度：</span>
+                        <p class="detail_content part_end">现金提取额度是汇丰中国基于您的信用记录和综合资质授予您的信用卡现金提取的最高额度，初始额度为客户信用卡额度的50%，汇丰中国可能会酌情调整。现金提取额度包含于信用额度之内。</p>
+                        <span class="detail_title">计息方式：</span>
+                        <p class="detail_content part_end">现金提取不享受免息还款期待遇，从现金提取办理当天起至清偿日止，该等利息按照日利率万分之五或汇丰中国之后根据适用法律法规不时调整的其他利率向持卡人收取。</p>
+                        <span class="detail_title">现金提取费用：</span>
+                        <p class="detail_content part_end">信用卡现金提取手续费以汇丰中国公布的《汇丰银行（中国）有限公司信用卡费率表》为准。</p>
+                        <span class="detail_title">其他注意事项：</span>
+                        <p class="detail_content part_end">自助柜员机单日取现金额会受到自助柜员机管辖行对取现的限额限次限制。目前，汇丰中国信用卡每卡每日累计取款限额为人民币10000元。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--交易通知-->
+            <div class="item">
+                <h1 class="item_title">交易通知</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <span class="detail_title">短信通知</span>
+                        <p class="detail_content part_end">您的一定金额以上的消费和现金提取，都将收到汇丰中国的短信通知；短信通知金额起点目前默认设置为人民币200元，您可以致电汇丰中国信用卡客服热线95366或40086-95366 （境外请致电+86-21-2053 4333）进行调整。</p>
+                        <span class="detail_title">微信通知</span>
+                        <p class="detail_content">若您关注汇丰中国微信服务号并成功绑定信用卡后，您的消费信息也会即时推送到您的微信上。</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--查询账单-->
+            <div class="item">
+                <h1 class="item_title">查询账单</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <p class="detail_content part_end">除电子账单/纸质账单外，您还可通过汇丰中国手机银行，汇丰中国信用卡手机银行，汇丰中国微信服务号以及信用卡网上银行查询账单。</p>
+                        <span class="detail_title">账单术语解释：</span>
+                        <p class="detail_content"></p>
+                        <span class="detail_title">账单日和到期还款日</span>
+                        <p class="detail_content">“账单日”指汇丰中国每月对持卡人的交易款项本金、应付费用等进行汇总，结计利息，计算出持卡人在到期还款日应还款项的日期。“到期还款日” 指汇丰中国规定的持卡人应该偿还的到期应还款项或最低还款额的最后日期。到期还款日一般在账单日后的第20天左右（以账单所示为准）。</p>
+                        <p class="detail_content part_end">不同持卡人的账单日可能互不相同，比如：账单日为每月15日，则每期账单记录的是上月16日至本月15日的所有入账交易，如果本月有31天，则对应的最后还款日是次月4日。15日当天的消费，一般16日才入账，则计入下期账单。</p>
+                        <span class="detail_title">交易日和记账日</span>
+                        <p class="detail_content part_end">交易日是每笔信用卡交易的实际发生日期，记账日一般为交易日的次日。"账单日"之后入账的交易归属下期账单。</p>
+                        <span class="detail_title">最低还款额</span>
+                        <p class="detail_content part_end">最低还款额是使用循环信用时，当月最低需要偿还的金额，最低还款金额列示在当期账单上。</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--您还需要知道-->
+        <div class="content content3">
+            <!--还款介绍-->
+            <div class="item first_item">
+                <h1 class="item_title">还款介绍</h1>
+                <div class="detail first_detail rightHigh">
+                    <div class="left">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                                <td width="6%"></td>
+                                <td width="12%">适用您的情形</td>
+                                <td width="12%">推荐还款渠道</td>
+                                <td width="50%" align="center">详细介绍</td>
+                                <td width="20%" align="center">到账时间</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="6">还人民币账单</td>
+                                <td rowspan="2">我有汇丰中国人民币储蓄账户</td>
+                                <td>本行账户自动还款</td>
+                                <td>根据您到期还款日前一天系统日终结算时的欠款余额，从您指定的人民币自动还款账户扣款</td>
+                                <td>最后还款日当天到账</td>
+                            </tr>
+                            <tr>
+                                <td>本行信用卡网上银行或手机银行转账还款</td>
+                                <td>使用信用卡网上银行或手机银行，发起从您在本行开立的人民币活期存款账户转账还款</td>
+                                <td>下午4:30前完成的交易当天到账4:30后完成的交易次日到账</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">我有他行人民币借记卡</td>
+                                <td>跨行转账汇款还款</td>
+                                <td>使用他行网上银行或在他行网点、ATM转账汇款</td>
+                                <td>咨询转出行</td>
+                            </tr>
+                            <tr>
+                                <td>拉卡拉还款</td>
+                                <td>在拉卡拉便捷自助终端还款</td>
+                                <td>支持实时恢复额度，还款金额会在交易日的下一个工作日入账</td>
+                            </tr>
+                            <tr>
+                                <td>银联信用卡还款</td>
+                                <td>使用“云闪付APP”或银联持卡人服务网站<a href="http://www.95516.com" target="_blank">www.95516.com</a>的“信用卡还款”功能还款，或银联便民支付终端还款</td>
+                                <td>支持实时恢复额度，还款金额会在交易日的下一个工作日入账</td>
+                            </tr>
+                            <tr>
+                                <td>我有人民币现金</td>
+                                <td>网点柜面还款</td>
+                                <td>在本行柜台使用人民币现金还款</td>
+                                <td>下午5:00前完成的交易当天到账5:00后完成的交易次日到账</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">还美元账单</td>
+                                <td rowspan="2">我有汇丰中国美元储蓄账户</td>
+                                <td>本行账户自动转账还款</td>
+                                <td>根据您到期还款日前一天系统日终结算时的欠款余额，从您指定的美元自动还款账户扣款</td>
+                                <td>最后还款日当天到账</td>
+                            </tr>
+                            <tr>
+                                <td>本行信用卡网上银行或手机银行转账还款</td>
+                                <td>使用信用卡网上银行或手机银行，发起从您在本行开立的美元储蓄账户转账还款</td>
+                                <td>下午4:30前完成的交易当天到账4:30后完成的交易次日到账</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="right">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td width="6%"></td>
+                                <td width="12%">适用您的情形</td>
+                                <td width="12%">推荐还款渠道</td>
+                                <td width="50%" align="center">详细介绍</td>
+                                <td width="20%" align="center">到账时间</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">还美元账单</td>
+                                <td>我有美元现金</td>
+                                <td>可以在汇丰中国网点柜面还款</td>
+                                <td>需要同时拥有汇丰中国美元储蓄账户，在本行柜台先把美元现金存入您的美元储蓄账户，再转账还款</td>
+                                <td>下午5:00前完成的交易当天到账5:00后完成的交易次日到账</td>
+                            </tr>
+                            <tr>
+                                <td>我有汇丰中国人民币储蓄账户</td>
+                                <td>本行账户自动购汇还款</td>
+                                <td>根据您到期还款日前一天系统日终结算时的美元账单欠款余额，从您指定的人民币自动购汇还款账户中扣除人民币购汇还款</td>
+                                <td>最后还款日当天到账</td>
+                            </tr>
+                            <tr>
+                                <td>我想直接自助还人民币</td>
+                                <td>人民币信用卡账户溢缴款自动购汇还款</td>
+                                <td>需要您自行将用于购汇的人民币金额在最后还款日系统日终结算前还入人民币信用卡，并通过信用卡网上银行、手机银行或客服热线设置人民币信用卡溢缴款购汇还款</td>
+                                <td>最后还款日当天到账</td>
+                            </tr>
+                        </table>
+                        <span class="detail_title" style="font-size:14px;color:#000;">温馨提示：</span>
+                        <p class="detail_content">
+                            1）支付宝还款暂未上线，具体上线时间请留意汇丰中国微信服务号和信用卡官方网站的最新通知。<br>
+                            2）上文所指的信用卡网上银行是专为信用卡开发设计的服务渠道，与原有汇丰中国个人网上银行不同，需通过网址：<a href="https://creditcards.hsbc.com.cn/perbank/" target="_blank">https://creditcards.hsbc.com.cn/perbank/</a>访问。原有的汇丰中国个人网上银行暂不能支持信用卡还款。<br>
+                            3）自2017年1月1日开始，ATM转账将延迟24小时处理。如您将使用ATM跨行转账还款，请考虑延迟的时间及周末/节假日等因素提前转账以免造成逾期。<br>
+                            4）为保证您能及时通过人民币存款账户自动扣款还款成功，请您确认扣款账户内预留足够余额并至少在到期还款日三天前完成设置通过人民币储蓄账户自动扣款还款。<br>
+                            5）扫描下方二维码，进入App Store或者腾讯应用宝，下载“汇丰中国手机银行”客户端。安卓系统用户也可以在中国主流安卓应用市场（百度及华为），搜索“汇丰银行”下载。
+                            <img src="images/hsbc_mb_bankcode.jpg" alt="" style="display: block; margin: 10px 0;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!--分期还款-->
+            <div class="item">
+                <h1 class="item_title">分期还款</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <p class="detail_content">为了便于您的资金周转，汇丰为您提供分期还款服务，暂时支持3、6、10、12、18、24期的分期申请。您可以在您的允许分期额度内提交分期申请，汇丰将根据您选择的分期金额和期数，将每期应还的分期本金平均摊入后续账单，余数计入最后一期账单。分期金额不计利息，同时汇丰将按照下表所列手续费率每月收取分期手续费。</p>
+                        <!--
+                        <table cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <td>分期期数</td>
+                                <td>3</td>
+                                <td>6</td>
+                                <td>10</td>
+                                <td>12</td>
+                                <td>18</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td>每期手续费率</td>
+                                <td>1.0%</td>
+                                <td>0.75%</td>
+                                <td>0.7%</td>
+                                <td>0.65%</td>
+                                <td>0.65%</td>
+                                <td>0.6%</td>
+                            </tr>
+                        </table>
+                        -->
+                        <span class="detail_title">期数和费率：</span>
+                        <p class="detail_content">分期期数可选3期、6期、10期、12期、18期和24期，手续费费率区间为0.5%-1.0%之间，具体费率由本行根据分期的期数及持卡人资质等因素最终确定。</p>
+                        <p class="detail_content" style="margin-top: 15px;">分期每期应还本金=分期本金总额÷分期期数，每期应还本金（精确到分）逐月计入持卡人信用卡账户，余数计入最后一期。</p>
+                        <p class="detail_content">分期每期手续费=分期本金总额×对应期数的每期手续费率。手续费一经收取，不予退还。
+                            <br/><br/>
+                            您办理分期成功后，分期金额将从分期后最近一期账单起列入账单，每期手续费与每期分期金额同时入账，并计入最低还款额中。</p>
+                        <p class="detail_content">分期还款一旦申请成功，持卡人不得撤销该申请，且不得对分期金额和还款期数再申请变更。您可以致电本行客户服务电话预约提前还款，申请通过后须一次性还清未偿还的分期款项及剩余未请款手续费, 已收取的分期手续费不予退还。</p>
+                        <span class="detail_title">申请渠道：</span>
+                        <p class="detail_content part_end">您可通过汇丰中国手机银行、汇丰中国信用卡手机银行、汇丰中国微信服务号、汇丰信用卡个人网银、信用卡服务热线等渠道或发送短信申请账单分期/交易分期业务。</p>
+                    </div>
+
+                    <div class="right">
+                        <span class="detail_title">交易分期：</span>
+                        <p class="detail_content part_end">您可以申请的交易分期起始金额为人民币500元(含)。对未出账单的交易申请交易分期,分期的总金额须等于原交易金额的总和, 不支持对未出账单的单笔交易进行部分金额的分期。您可以自已入账的消费当日至最近一期账单日的入账时点（不含当日）之间申请交易分期。</p>
+                        <span class="detail_title">账单分期：</span>
+                        <p class="detail_content">您可以申请的账单分期起始金额为人民币1000元(含)。对已出账单申请账单分期,金额最高不超过当期账单新增刷卡消费总额(不含现金提取、分期付款交易以及其它本行指定的交易)减去最低还款额的剩余金额，具体以汇丰受理分期业务时建议的可分期最高额度为准。您可以自账单日次日至该账单到期还款日的入账时点（不含当日）之间进行申请。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--现金分期-->
+            <div class="item">
+                <h1 class="item_title">现金分期</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <p class="detail_content">有临时现金需求并具备良好还款能力的持卡人可以在发卡行核定的现金分期额度内申请现金分期业务。现金分期业务仅限于人民币，经申请后由发卡行审核，审核通过即发放至持卡人的同名借记卡账户并由持卡人分期归还本金及手续费。</p>
+
+                        <span class="detail_title">分期金额：</span>
+                        <p class="detail_content">单笔不最低于人民币1000元（含），累计最高不超过人民币50000元（含）。但在任何情况下均不得超过持卡人的信用卡现金提取可用额度（不含临时额度及溢缴款）。</p>
+                        <span class="detail_title">期数和费率：</span>
+                        <p class="detail_content">现金分期期数可选3期、6期、10期、12期、18期、24期和36期。现金分期手续费费率区间为0.5%-1.0%之间，具体费率由本行根据分期期数及持卡人资质等因素最终确定。</p>
+                        <p class="detail_content">每期应还本金金额 = 分期还款本金总金额 ÷ 分期期数，每期应还本金金额（四舍五入精确到分）逐月计入持卡人信用卡账单，余数计入最后一期。</p>
+                        <p class="detail_content">每期手续费金额 =分期本金总金额 ×发卡行核定的每期手续费费率（精确到分），手续费一经收取，不予退还。</p>
+                        <p class="detail_content">现金分期每期应还本金金额与每期手续费金额同时计入持卡人当月信用卡账单，构成持卡人当月最低还款额的一部分。</p>
+                    </div>
+                    <div class="right">
+                        <span class="detail_title">放款方式：</span>
+                        <p class="detail_content">可转账至持卡人本人在本行或国内其他银行的同名借记卡账户。</p>
+                        <span class="detail_title">申请渠道：</span>
+                        <p class="detail_content">您可通过汇丰中国手机银行、汇丰中国信用卡网上银行、汇丰中国信用卡手机银行 、官方微信服务号和信用卡客服热线申请现金分期业务。</p>
+                        <span class="detail_title">注意事项：</span>
+                        <p class="detail_content">现金分期经发卡行核准后发放的资金仅能用于持卡人合理的个人或家庭消费，不得用于股票、债券等资本投资、房地产（含车位）投资、任何经营性支出及非日常消费领域，同时持卡人使用资金应当遵守法律、法规、部门规章以及相关监管要求。持卡人须在申请时说明真实资金用途，并保留相关消费凭证。发卡行保留对持卡人资金用途进行审核的权利。</p>
+                        <p class="detail_content">持卡人申请现金分期一经审核通过，则不能撤销，不能对分期金额和期数进行更改。您可通过我行客户服务热线申请提前还款， 申请通过后需一次性还清未偿还的全部剩余本金及相应的分期手续费， 已收取的分期手续费不予退还。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--收费标准-->
+            <div class="item">
+                <h1 class="item_title">收费标准</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <p class="detail_content">汇丰CP信用卡年费300元，内含多项专属权益。首年激活卡片后免收首年年费，刷卡满6次可免次年年费。</p>
+                        <p class="detail_content part_end">其他收费详见汇丰中国公布的《汇丰银行（中国）有限公司信用卡费率表》。</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!--还款须知-->
+            <div class="item">
+                <h1 class="item_title">还款须知</h1>
+                <div class="detail first_detail">
+                    <div class="left">
+                        <span class="detail_title">溢缴款</span>
+                        <p class="detail_content">溢缴款是指持卡人通过存款至信用卡账户、或者因退款、退税等款项被贷记至信用卡账户内等方式导致的，在信用卡账户内的存款金额超过未清偿债务的超额部分。</p>
+                        <p class="detail_content">您可以<br>
+                            1. 使用溢缴款正常消费、抵扣还款；<br>
+                            2. 通过ATM提取溢缴款；<br>
+                            3. 致电汇丰中国信用卡客服热线，要求将溢缴款转入本人在本行的同名借记卡账户；<br>
+                            4. 致电汇丰中国信用卡客服热线，按约定时间到指定营业网点以现金形式领回溢缴款。</p>
+                        <p class="detail_content">持卡人通过上述除消费以外的任意方式领回溢缴款，本行将收取相应手续费。</p>
+                        <span class="detail_title" style="font-size:14px;color:#000;">注意事项：</span>
+                        <p class="detail_content part_end">1. 本行对持卡人信用卡账户内的溢缴款项不计付存款利息。持卡人应尽量避免在信用卡账户（包括人民币信用卡，美元信用卡）中产生溢缴款项。<br>
+                            2. 溢缴款领回，本行将收取相应的手续费，手续费金额为每笔领回金额的1%，最低10元/笔或2美元/笔。<br>
+                            3. 如选择通过ATM提取溢缴款的，每卡每日累计不得超过人民币1万元。<br>
+                            4. 如选择将溢缴款转入本人在本行的同名借记卡账户的，账号一旦选定则不能修改。目前仅限主卡持卡人的溢缴款转入本人同名借记卡账户，不能转给其他第三方，包括附属卡持卡人的借记卡账户。每日限领一笔。<br>
+                            5. 如选择通过预约时间前往营业网点领回溢缴款的，若持卡人未能在约定时间后的1个月内领回，该款项会退回持卡人的信用卡账户，已收手续费不退回。每日限领一笔。<br>
+                            6. 溢缴款不能跨币种领回。即人民币溢缴款只能以人民币形式领回，美元溢缴款只能以美元形式领回。<br>
+                            7. 持卡人信用卡账户内的溢缴款需要在人民币110元以下才可向本行申请销卡销户。
+                        </p>
+                    </div>
+                    <div class="right">
+                        <span class="detail_title">免息还款期</span>
+                        <p class="detail_content part_end">您使用信用卡发生的消费（不包括现金提取交易），自银行记账日起至银行规定的到期还款日止为免息还款期。如果您在到期还款日偿还了当期对账单项下的全部到期应还款项即可享受免息还款期待遇，无需为消费支付利息。您可享受最长达51天的免息还款期。</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
