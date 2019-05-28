@@ -1,0 +1,456 @@
+@import "_basic";
+@imagePath:'../images/';
+
+html{
+  font-size: 20px;
+}
+.mb_show{display: none;}
+img{width: auto;}
+.colored{color: #d6001c;}
+#out_box{
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  color: #061f41;
+}
+
+
+/*.Data_layout{
+  background:url('@{imagePath}page_bg.jpg') no-repeat top center #000;
+  background-size: 100%;
+}*/
+/*.Result_layout{
+  background:url('@{imagePath}result_bg.png') no-repeat top center #000;
+  background-size: 100%;
+  padding-bottom: 2rem;
+}*/
+
+.top{
+  width: 100%;
+  .content_box{
+    width: 90%;
+    margin: 0 auto;
+    color: #061f41;
+    text-align: center;
+  }
+  .title{
+    font-size: 44px;
+    margin-top:5%;
+    margin-bottom: 5%;
+    font-weight: bold;
+  }
+  .step{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .tip{
+    font-size: 14px;
+    color: #c2c2c2;
+    margin-top: 1%;
+    margin-bottom: 2%;
+  }
+}
+
+/*input::-webkit-input-placeholder {color: #061f41;}
+textarea::-webkit-textarea-placeholder {color: #061f41;}*/
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #061f41;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #061f41;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #061f41;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #061f41;
+}
+
+.content{
+  width: 100%;
+  margin: 0 auto;
+}
+.content{
+  .person{
+    background:url('../images/online_registration_03.png') no-repeat top center;
+    background-size: 100%;
+    padding-bottom: 1%;
+  }
+  .area_title{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #061f41;
+    font-weight: bold;
+    padding-top: 8%;
+    margin-bottom: 3%;
+  }
+  .basic,.operation{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    .basic_item{
+      width: 47%;
+      float: left;
+      margin-left: 5%;
+      margin-bottom: 1rem;
+      position: relative;
+      &:nth-child(2n-1){margin-left: 0;}
+      .intro{
+        font-size: 0.8rem;
+      }
+      .intro[disabled]{color: #999;}
+      .item_data{
+        border-radius: 5px;
+        width: 100%;
+        height: 2rem;
+        color: #061f41;
+        font-size: 0.8rem;
+        line-height: 2rem;
+        .setbox;
+        border: 1px solid #cccccc;
+        margin-top: 0.2rem;
+        padding: 0 0.4rem;
+      }
+      .item_select{
+        /*很关键：将默认的select选择框样式清除*/
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        background: #fff url("@{imagePath}icon.png") no-repeat 96% 50%;
+        background-size: 10px;
+        option{
+          background: #fff;
+        }
+      }
+      select[disabled]{
+        background: #f2f2f2 url("@{imagePath}icon.png") no-repeat 96% 50%;
+        color: #a0a0a0;
+     }
+      input[disabled]{
+        background: #f2f2f2;
+        color: #a0a0a0;
+      }
+      input[disabled]::-webkit-input-placeholder{
+        color: #a0a0a0;
+      }
+      .item_input{
+        background: #fff;
+      }
+      .unit{
+        font-size: 0.8rem;
+        position: absolute;
+        right: 0.4rem;
+        bottom: 0.5rem;
+        color: #adadad;
+      }
+      .error-message{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        .transform(translateY(100%));
+        font-size: 0.6rem;
+        color: red;
+      }
+      /*.err_msg{
+        left: 18%;
+      }*/
+      .err_message{
+        bottom: -0.5rem;
+      }
+    }
+
+    .get_vcode{
+      width: 23%;
+      height: 1.9rem;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      background: #061f41;
+      position: absolute;
+      top:5px;
+      right:0;
+    }
+    .region_title{
+      font-size: 0.8rem;
+      padding-top: 1%;
+      float: left;
+    }
+    .region{
+      width: 14%;
+      padding-left: 3%;
+      margin-left: 0;
+    }
+    /*.region2{padding-left: 7%;}*/
+    .textarea_item{
+      width: 100%;
+      .ps_text{
+        background: #161616;
+        height: 3rem;
+        resize: none;
+        line-height: 160%;
+      }
+    }
+    .ps_text::-webkit-input-placeholder{
+      color: #adadad;
+      line-height: 160%;
+    }    /* 使用webkit内核的浏览器 */
+    .ps_text:-moz-placeholder{
+      color: #adadad;
+      line-height: 160%;
+    }                  /* Firefox版本4-18 */
+    .ps_text::-moz-placeholder{
+      color: #adadad;
+      line-height: 160%;
+    }                  /* Firefox版本19+ */
+    .ps_text:-ms-input-placeholder{
+      color: #adadad;
+      line-height: 160%;
+    }           /* IE浏览器 */
+  }
+  .submit_btn{
+    width: 10rem;
+    padding: 0.5rem;
+    background: #061f41;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    margin: 2rem auto;
+    cursor: pointer;
+  }
+}
+
+
+.education{
+  background: url("../images/online_registration_04.png")no-repeat top center;
+  background-size: 100%;
+  margin-top: 1%;
+  padding-bottom: 4%;
+  .operation{
+    #honor{
+      height: 8.5rem;
+      line-height: 1rem;
+      font-size: 0.7rem;
+    }
+    .edu_left{
+      width: 47%;
+      float: left;
+      position: relative;
+      .item_file{
+        opacity: 0;
+      }
+      .file_upload{
+        width: 100%;
+        position: absolute;
+        .upload{
+          background: #fff;
+          span{
+            color: #ff0000;
+          }
+          .two{
+            color: #a0a0a0;
+            float: right;
+          }
+        }
+        .format{
+          font-size: 0.6rem;
+          color: #a0a0a0;
+        }
+      }
+    }
+    .edu_right{
+      width: 47%;
+      float: left;
+      margin-left: 5%;
+      input::-webkit-input-placeholder {text-align: start;}
+    }
+    .clear_f{
+      float: none;
+      margin-left: 0;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+  .family{
+    background: url("../images/online_registration_05.png")no-repeat top center;
+    background-size: 100%;
+    .basic{
+      .poor_v{
+        width: 100%;
+        position: relative;
+        .item_file{
+          opacity: 0;
+        }
+        .file_upload{
+          width: 100%;
+          position: absolute;
+          .upload{
+            width: 47%;
+            background: #fff;
+            span{
+              color: #ff0000;
+            }
+            .two{
+              color: #a0a0a0;
+              float: right;
+            }
+          }
+          .format{
+            font-size: 0.6rem;
+            color: #a0a0a0;
+          }
+          .format2{
+            font-size: 0.6rem;
+            color: #a0a0a0;
+          }
+        }
+        .error_msg{
+          left: 37%;
+        }
+      }
+      .main_source{
+        width: 100%;
+        margin-left: 0;
+        margin-top:1.5rem;
+        .item_input{
+          height: 5rem;
+          line-height: 1rem;
+          font-size: 0.7rem;
+          resize:none;
+        }
+      }
+    }
+  }
+
+  .dream{
+    background: url("../images/online_registration_06.png")no-repeat top center;
+    background-size: 100%;
+    padding-bottom: 5%;
+    .basic{
+      .dream_dec{
+        display: block;
+        width: 100%;
+        .item_input{
+          height: 6rem;
+          line-height: 1rem;
+          font-size: 0.7rem;
+          resize:none;
+        }
+      }
+    }
+  }
+
+.tips{
+  font-size: 0.8rem;
+  padding: 1% 0;
+  span{color: #fd0f0f;}
+}
+.basic{
+  .checkBox{
+    margin-left: 0!important;
+    width: 100% !important;
+    #tc_check{
+      width: auto;
+      height: auto;
+    }
+    .check{
+      font-size: 0.7rem;
+      color: #a0a0a0;
+    }
+    .error_mess{
+      left: 44%;
+    }
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width: 750px){
+  .pc_show{display: none;}
+  .mb_show{display: block!important;width: 10%;margin: 0 auto;}
+  html{font-size: 3.75vw}
+  img{width: 100%;}
+  .top{
+    .title{
+      font-size: 1.8rem;
+    }
+    .step{
+      font-size: 1.4rem;
+    }
+    .tip{
+      font-size: 1rem;
+    }
+  }
+
+  .content{
+    width: 100%;
+    .area_title{
+      padding-top: 17%;
+    }
+    .person{
+      background-size: 100%;
+      background: url(../images/online_registration_08.png) no-repeat top center;
+      margin-top: 3%;
+    }
+    .basic{
+      .get_vcode{
+        width: 40%;
+        font-size: 0.7rem;
+        top:4px;
+      }
+      .region_title{
+        padding-top: 3%;
+      }
+      .region{padding-left: 2%;}
+    }
+  }
+  .education{
+    background: url(../images/online_registration_09.png) no-repeat top center;
+    margin-top: 3%;
+  }
+  .family{
+      background: url(../images/online_registration_10.png) no-repeat top center;
+    margin-top: 3%;
+    }
+  .dream{
+    background: url(../images/online_registration_11.png) no-repeat top center;
+    margin-top: 3%;
+  }
+  #data_form{margin-top: 1rem}
+  .Data{
+    .area_title{
+      img{width: 3rem;}
+    }
+    .basic,.operation{
+      .basic_item{
+        width: 100%;
+        margin-left: 0;
+        .item_select{
+          background-size: 16px;
+          background-position: 97% 50%;
+        }
+      }
+      .textarea_item{
+        width: 100%;
+      }
+    }
+    .submit_btn{margin: 1rem auto;}
+  }
+  .education .operation .edu_left .file_upload .format{
+    font-size: 0.4rem;
+  }
+  .family .basic .poor_v .error_msg{left:28%; }
+  .family .basic .main_source{margin-top: 4rem;}
+
+  .center_center_box_mb {
+    width: 100%;
+    height: 100%;
+    .display_box();
+    .box_position(center, center);
+  }
+  .basic .checkBox .error_mess{left: 40%;}
+
+}

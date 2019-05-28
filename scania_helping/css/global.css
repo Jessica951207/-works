@@ -1,0 +1,685 @@
+@charset "utf-8";
+/*---------- reset ----------*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+ul,
+li,
+ol {
+  list-style: none;
+  background: transparent;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  clear: both;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+blockquote {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input[type="submit"]:focus,
+input[type="button"]:focus {
+  outline: none;
+}
+:focus {
+  outline: 0;
+}
+a img,
+input[type="submit"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner {
+  border: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: Arial, Microsoft YaHei, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+.clear {
+  background: none;
+  border: 0;
+  clear: both;
+  display: block;
+  float: none;
+  font-size: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+input,
+a {
+  outline: none;
+}
+.clear {
+  clear: both;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+img {
+  display: block;
+  width: 100%;
+  border: none;
+}
+.setbox {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+[v-cloak] {
+  display: none;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand {
+  display: none;
+}
+html {
+  font-size: 20px;
+}
+.mb_show {
+  display: none;
+}
+img {
+  width: auto;
+}
+.colored {
+  color: #d6001c;
+}
+#out_box {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  color: #061f41;
+}
+/*.Data_layout{
+  background:url('@{imagePath}page_bg.jpg') no-repeat top center #000;
+  background-size: 100%;
+}*/
+/*.Result_layout{
+  background:url('@{imagePath}result_bg.png') no-repeat top center #000;
+  background-size: 100%;
+  padding-bottom: 2rem;
+}*/
+.top {
+  width: 100%;
+}
+.top .content_box {
+  width: 90%;
+  margin: 0 auto;
+  color: #061f41;
+  text-align: center;
+}
+.top .title {
+  font-size: 44px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-weight: bold;
+}
+.top .step {
+  font-size: 24px;
+  font-weight: bold;
+}
+.top .tip {
+  font-size: 14px;
+  color: #c2c2c2;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+/*input::-webkit-input-placeholder {color: #061f41;}
+textarea::-webkit-textarea-placeholder {color: #061f41;}*/
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #061f41;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #061f41;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #061f41;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #061f41;
+}
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+.content .person {
+  background: url('../images/online_registration_03.png') no-repeat top center;
+  background-size: 100%;
+  padding-bottom: 1%;
+}
+.content .area_title {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #061f41;
+  font-weight: bold;
+  padding-top: 8%;
+  margin-bottom: 3%;
+}
+.content .basic,
+.content .operation {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  /*.region2{padding-left: 7%;}*/
+  /* 使用webkit内核的浏览器 */
+  /* Firefox版本4-18 */
+  /* Firefox版本19+ */
+  /* IE浏览器 */
+}
+.content .basic .basic_item,
+.content .operation .basic_item {
+  width: 47%;
+  float: left;
+  margin-left: 5%;
+  margin-bottom: 1rem;
+  position: relative;
+  /*.err_msg{
+        left: 18%;
+      }*/
+}
+.content .basic .basic_item:nth-child(2n-1),
+.content .operation .basic_item:nth-child(2n-1) {
+  margin-left: 0;
+}
+.content .basic .basic_item .intro,
+.content .operation .basic_item .intro {
+  font-size: 0.8rem;
+}
+.content .basic .basic_item .intro[disabled],
+.content .operation .basic_item .intro[disabled] {
+  color: #999;
+}
+.content .basic .basic_item .item_data,
+.content .operation .basic_item .item_data {
+  border-radius: 5px;
+  width: 100%;
+  height: 2rem;
+  color: #061f41;
+  font-size: 0.8rem;
+  line-height: 2rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  margin-top: 0.2rem;
+  padding: 0 0.4rem;
+}
+.content .basic .basic_item .item_select,
+.content .operation .basic_item .item_select {
+  /*很关键：将默认的select选择框样式清除*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: #fff url("../images/icon.png") no-repeat 96% 50%;
+  background-size: 10px;
+}
+.content .basic .basic_item .item_select option,
+.content .operation .basic_item .item_select option {
+  background: #fff;
+}
+.content .basic .basic_item select[disabled],
+.content .operation .basic_item select[disabled] {
+  background: #f2f2f2 url("../images/icon.png") no-repeat 96% 50%;
+  color: #a0a0a0;
+}
+.content .basic .basic_item input[disabled],
+.content .operation .basic_item input[disabled] {
+  background: #f2f2f2;
+  color: #a0a0a0;
+}
+.content .basic .basic_item input[disabled]::-webkit-input-placeholder,
+.content .operation .basic_item input[disabled]::-webkit-input-placeholder {
+  color: #a0a0a0;
+}
+.content .basic .basic_item .item_input,
+.content .operation .basic_item .item_input {
+  background: #fff;
+}
+.content .basic .basic_item .unit,
+.content .operation .basic_item .unit {
+  font-size: 0.8rem;
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.5rem;
+  color: #adadad;
+}
+.content .basic .basic_item .error-message,
+.content .operation .basic_item .error-message {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  font-size: 0.6rem;
+  color: red;
+}
+.content .basic .basic_item .err_message,
+.content .operation .basic_item .err_message {
+  bottom: -0.5rem;
+}
+.content .basic .get_vcode,
+.content .operation .get_vcode {
+  width: 23%;
+  height: 1.9rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background: #061f41;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+.content .basic .region_title,
+.content .operation .region_title {
+  font-size: 0.8rem;
+  padding-top: 1%;
+  float: left;
+}
+.content .basic .region,
+.content .operation .region {
+  width: 14%;
+  padding-left: 3%;
+  margin-left: 0;
+}
+.content .basic .textarea_item,
+.content .operation .textarea_item {
+  width: 100%;
+}
+.content .basic .textarea_item .ps_text,
+.content .operation .textarea_item .ps_text {
+  background: #161616;
+  height: 3rem;
+  resize: none;
+  line-height: 160%;
+}
+.content .basic .ps_text::-webkit-input-placeholder,
+.content .operation .ps_text::-webkit-input-placeholder {
+  color: #adadad;
+  line-height: 160%;
+}
+.content .basic .ps_text:-moz-placeholder,
+.content .operation .ps_text:-moz-placeholder {
+  color: #adadad;
+  line-height: 160%;
+}
+.content .basic .ps_text::-moz-placeholder,
+.content .operation .ps_text::-moz-placeholder {
+  color: #adadad;
+  line-height: 160%;
+}
+.content .basic .ps_text:-ms-input-placeholder,
+.content .operation .ps_text:-ms-input-placeholder {
+  color: #adadad;
+  line-height: 160%;
+}
+.content .submit_btn {
+  width: 10rem;
+  padding: 0.5rem;
+  background: #061f41;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  margin: 2rem auto;
+  cursor: pointer;
+}
+.education {
+  background: url("../images/online_registration_04.png") no-repeat top center;
+  background-size: 100%;
+  margin-top: 1%;
+  padding-bottom: 4%;
+}
+.education .operation #honor {
+  height: 8.5rem;
+  line-height: 1rem;
+  font-size: 0.7rem;
+}
+.education .operation .edu_left {
+  width: 47%;
+  float: left;
+  position: relative;
+}
+.education .operation .edu_left .item_file {
+  opacity: 0;
+}
+.education .operation .edu_left .file_upload {
+  width: 100%;
+  position: absolute;
+}
+.education .operation .edu_left .file_upload .upload {
+  background: #fff;
+}
+.education .operation .edu_left .file_upload .upload span {
+  color: #ff0000;
+}
+.education .operation .edu_left .file_upload .upload .two {
+  color: #a0a0a0;
+  float: right;
+}
+.education .operation .edu_left .file_upload .format {
+  font-size: 0.6rem;
+  color: #a0a0a0;
+}
+.education .operation .edu_right {
+  width: 47%;
+  float: left;
+  margin-left: 5%;
+}
+.education .operation .edu_right input::-webkit-input-placeholder {
+  text-align: start;
+}
+.education .operation .clear_f {
+  float: none;
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+.family {
+  background: url("../images/online_registration_05.png") no-repeat top center;
+  background-size: 100%;
+}
+.family .basic .poor_v {
+  width: 100%;
+  position: relative;
+}
+.family .basic .poor_v .item_file {
+  opacity: 0;
+}
+.family .basic .poor_v .file_upload {
+  width: 100%;
+  position: absolute;
+}
+.family .basic .poor_v .file_upload .upload {
+  width: 47%;
+  background: #fff;
+}
+.family .basic .poor_v .file_upload .upload span {
+  color: #ff0000;
+}
+.family .basic .poor_v .file_upload .upload .two {
+  color: #a0a0a0;
+  float: right;
+}
+.family .basic .poor_v .file_upload .format {
+  font-size: 0.6rem;
+  color: #a0a0a0;
+}
+.family .basic .poor_v .file_upload .format2 {
+  font-size: 0.6rem;
+  color: #a0a0a0;
+}
+.family .basic .poor_v .error_msg {
+  left: 37%;
+}
+.family .basic .main_source {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 1.5rem;
+}
+.family .basic .main_source .item_input {
+  height: 5rem;
+  line-height: 1rem;
+  font-size: 0.7rem;
+  resize: none;
+}
+.dream {
+  background: url("../images/online_registration_06.png") no-repeat top center;
+  background-size: 100%;
+  padding-bottom: 5%;
+}
+.dream .basic .dream_dec {
+  display: block;
+  width: 100%;
+}
+.dream .basic .dream_dec .item_input {
+  height: 6rem;
+  line-height: 1rem;
+  font-size: 0.7rem;
+  resize: none;
+}
+.tips {
+  font-size: 0.8rem;
+  padding: 1% 0;
+}
+.tips span {
+  color: #fd0f0f;
+}
+.basic .checkBox {
+  margin-left: 0!important;
+  width: 100% !important;
+}
+.basic .checkBox #tc_check {
+  width: auto;
+  height: auto;
+}
+.basic .checkBox .check {
+  font-size: 0.7rem;
+  color: #a0a0a0;
+}
+.basic .checkBox .error_mess {
+  left: 44%;
+}
+@media screen and (max-width: 750px) {
+  .pc_show {
+    display: none;
+  }
+  .mb_show {
+    display: block!important;
+    width: 10%;
+    margin: 0 auto;
+  }
+  html {
+    font-size: 3.75vw;
+  }
+  img {
+    width: 100%;
+  }
+  .top .title {
+    font-size: 1.8rem;
+  }
+  .top .step {
+    font-size: 1.4rem;
+  }
+  .top .tip {
+    font-size: 1rem;
+  }
+  .content {
+    width: 100%;
+  }
+  .content .area_title {
+    padding-top: 17%;
+  }
+  .content .person {
+    background-size: 100%;
+    background: url(../images/online_registration_08.png) no-repeat top center;
+    margin-top: 3%;
+  }
+  .content .basic .get_vcode {
+    width: 40%;
+    font-size: 0.7rem;
+    top: 4px;
+  }
+  .content .basic .region_title {
+    padding-top: 3%;
+  }
+  .content .basic .region {
+    padding-left: 2%;
+  }
+  .education {
+    background: url(../images/online_registration_09.png) no-repeat top center;
+    margin-top: 3%;
+  }
+  .family {
+    background: url(../images/online_registration_10.png) no-repeat top center;
+    margin-top: 3%;
+  }
+  .dream {
+    background: url(../images/online_registration_11.png) no-repeat top center;
+    margin-top: 3%;
+  }
+  #data_form {
+    margin-top: 1rem;
+  }
+  .Data .area_title img {
+    width: 3rem;
+  }
+  .Data .basic .basic_item,
+  .Data .operation .basic_item {
+    width: 100%;
+    margin-left: 0;
+  }
+  .Data .basic .basic_item .item_select,
+  .Data .operation .basic_item .item_select {
+    background-size: 16px;
+    background-position: 97% 50%;
+  }
+  .Data .basic .textarea_item,
+  .Data .operation .textarea_item {
+    width: 100%;
+  }
+  .Data .submit_btn {
+    margin: 1rem auto;
+  }
+  .education .operation .edu_left .file_upload .format {
+    font-size: 0.4rem;
+  }
+  .family .basic .poor_v .error_msg {
+    left: 28%;
+  }
+  .family .basic .main_source {
+    margin-top: 4rem;
+  }
+  .center_center_box_mb {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: box;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    box-pack: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    box-align: center;
+  }
+  .basic .checkBox .error_mess {
+    left: 40%;
+  }
+}
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>斯堪尼亚载梦前行助学计划</title>
+    <link rel="stylesheet" href="css/global.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/vue.js"></script>
+
+
+
+</head>
+<body>
+    <div id="out_box" class="out_box">
+        <div class="top">
+            <img src="images/helpStudy_plan_mb_01.jpg" alt="" class="mb_show">
+            <img src="images/online_registration_01.png" alt="" class="pc_show">
+            <img src="images/online_registration_02.png" alt="">
+            <div class="content_box">
+                <p class="title">斯堪尼亚载梦前行助学计划</p>
+                <p class="step">简单4步，完成在线报名</p>
+                <p class="tip">请如实填写以下个人资料，以便我们后续审核资料</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <form id="data_form" action="">
+                <!--个人信息-->
+                <div class="basic_area person">
+                    <div class="area_title">个人信息</div>
+                    <div class="basic">
+                        <!--姓名-->
+                        <label class="basic_item">
+                            <input type="text" name="name" id="name" value="" class="item_data item_input" data-missing="请填写您的姓名" maxlength="50" placeholder="*姓名" autocomplete="off" v-model="dataArray.a1" @blur="checkForm(0)">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--性别-->
+                        <label class="basic_item">
+                            <select name="sex" id="sex" class="item_data item_select"  data-missing="请选择您的性别" v-model="dataArray.a2" @blur="checkForm(1)">
+                                <option value="" hidden>*性别</option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                            <div class="error-message"></div>
+                        </label>
+
+                        <!--身份证-->
+                        <label class="basic_item">
+                            <input type="text" name="icard" id="icard" value="" class="item_data item_input" data-missing="请填写您的身份证号码"  placeholder="*身份证" autocomplete="off" maxlength="18" v-model="dataArray.a3" @blur="checkForm(2)">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--邮箱-->
+                        <label class="basic_item">
+                            <input type="text" name="email" id="email" value="" class="item_data item_input"  placeholder="  邮箱" autocomplete="off" v-model="dataArray.a4" @blur="checkForm(3)" maxlength="20">
+                            <div class="error-message"></div>
+                        </label>
+
+                        <!--手机号码-->
+                        <label class="basic_item phone">
+                            <input type="text" name="contactNo" id="contactNo" value="" class="item_data item_input" data-missing="请填写您的手机号码"  placeholder="*手机号码" maxlength="11" autocomplete="off" v-model="dataArray.a5" @blur="checkForm(4)">
+                            <div class="error-message"></div>
+                            <button class="get_vcode">获取验证码</button>
+                        </label>
+                        <!--验证码-->
+                        <label class="basic_item">
+                            <input type="text" name="vcode" id="vcode" value="" class="item_data item_input" data-missing="请输入您的验证码"   placeholder="*验证码" autocomplete="off" v-model="dataArray.a6" @blur="checkForm(5)" maxlength="6">
+                            <div class="error-message"></div>
+                        </label>
+
+                        <!--户籍所在地-->
+                        <p class="region_title">*户籍所在地</p>
+                        <label class="basic_item region">
+                            <select  @change="selectchange(dataArray.a7)" name="province" id="province" class="item_data item_select"  data-missing="请选择省份" v-model="dataArray.a7" @blur="checkForm(6)">
+                                <option value="" hidden>省份</option>
+                                <option v-for="item in provinceArr" :key="item.id" :value="item.name">{{item.name}}</option>
+                            </select>
+                            <div class="error-message err_msg"></div>
+                        </label>
+                        <label class="basic_item region">
+                            <select name="city" id="city" class="item_data item_select"  data-missing="请选择市" v-model="dataArray.a8" @blur="checkForm(7)" :disabled="disableEmission" >
+                                <option value="" hidden>市</option>
+                                <option v-for="item in cities" :key="item.id" :value="item">{{item}}</option>
+                            </select>
+                            <div class="error-message err_msg"></div>
+                        </label>
+
+                        <label class="basic_item region region2">
+                            <input type="text" name="county" id="county" value="" class="item_data item_input" placeholder="县" autocomplete="off" maxlength="20" v-model="dataArray.a9" @blur="checkForm(8)" :disabled="disableEmission">
+                            <div class="error-message err_msg"></div>
+                        </label>
+                        <label class="basic_item region">
+                            <input type="text" name="town" id="town" value="" class="item_data item_input"  placeholder="乡（镇)" autocomplete="off" maxlength="20" v-model="dataArray.a10" @blur="checkForm(9)" :disabled="disableEmission">
+                            <div class="error-message err_msg"></div>
+                        </label>
+                        <label class="basic_item region">
+                            <input type="text" name="village" id="village" value="" class="item_data item_input"  placeholder="村" autocomplete="off" maxlength="20" v-model="dataArray.a11" @blur="checkForm(10)" :disabled="disableEmission">
+                            <div class="error-message err_msg"></div>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!--教育背景-->
+                <div class="education">
+                    <div class="area_title">教育背景</div>
+                    <div class="operation">
+                        <div class="edu_left">
+                            <!--当前状态-->
+                            <label class="basic_item clear_f">
+                                <select name="state" id="state" class="item_data item_select clear_f" data-missing="请选择当前状态" v-model="dataArray.a12" @blur="checkForm(11)">
+                                    <option value="" hidden>*当前状态</option>
+                                    <option value="在读学生">在读学生</option>
+                                    <option value="在职 ">在职</option>
+                                </select>
+                                <div class="error-message err_message"></div>
+                            </label>
+                             <!-- 学生证/毕业证-->
+                            <label class="basic_item clear_f">
+                                <div class="file_upload">
+                                    <div class="item_data upload">*学生证/毕业证<span class="two">点击上传文件</span></div>
+                                    <p class="format">(文件格式：JPG/PNG；文件大小：小于1M）</p>
+                                </div>
+                                <input type="file" name="diploma" id="diploma" value="" class="item_data item_input clear_f item_file"  data-missing="请上传学生证/毕业证"  autocomplete="off" v-on="dataArray.a13" @blur="checkForm(12)" @change="getImageData('a13',$event)">
+                                <div class="error-message err_message error"></div>
+                            </label>
+                            <!--受教育程度-->
+                            <label class="basic_item clear_f">
+                                <div class="intro"></div>
+                                <select name="schooling" id="schooling" class="item_data item_select clear_f" data-missing="请选择受教育程度" v-model="dataArray.a14" @blur="checkForm(13)">
+                                    <option value="" hidden>* 受教育程度</option>
+                                    <option value="6">大专</option>
+                                    <option value="8">高中</option>
+                                    <option value="7">中专</option>
+                                </select>
+                                <div class="error-message err_message"></div>
+                            </label>
+                        </div>
+                        <!--曾获得的荣誉-->
+                        <div class="edu_right">
+                            <label class="basic_item clear_f">
+                                <textarea name="honor" id="honor" cols="30" rows="10" class="item_data item_input clear_f" placeholder="曾获得的荣誉 请详细描述曾在校所获得的荣誉" v-model="dataArray.a15" @blur="checkForm(14)"></textarea>
+                                <div class="error-message"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!--家庭状况-->
+                <div class="family">
+                    <div class="area_title">家庭状况</div>
+                    <div class="basic">
+                        <!--家庭人口数-->
+                        <label class="basic_item">
+                            <div class="unit">人</div>
+                            <input type="text" name="familyNo" id="familyNo" value="" class="item_data item_input" placeholder="* 家庭人口数" data-missing="请输入家庭人口数" maxlength="3" autocomplete="off" v-model="dataArray.a16" @blur="checkForm(15)">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--劳动人口数-->
+                        <label class="basic_item">
+                            <div class="unit">人</div>
+                            <input type="text" name="workNo" id="workNo" value="" class="item_data item_input" placeholder="* 劳动人口数" data-missing="请输入劳动人口数" autocomplete="off" placeholder="0" maxlength="7" v-model="dataArray.a17" @blur="checkForm(16)">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--家庭年收入-->
+                        <label class="basic_item">
+                            <div class="unit">元</div>
+                            <input type="text" name="income" id="income" value="" class="item_data item_input"  placeholder="* 家庭年收入" data-missing="请输入家庭年收入"  autocomplete="off" v-model="dataArray.a18" @blur="checkForm(17)" >
+                            <div class="error-message"></div>
+                        </label>
+                        <!--家庭年支出-->
+                        <label class="basic_item">
+                            <div class="unit">元</div>
+                            <input type="text" name="expenditure" id="expenditure" value="" class="item_data item_input"  placeholder="* 家庭年支出"  data-missing="请输入家庭年支出"  autocomplete="off" v-model="dataArray.a19" @blur="checkForm(18)" >
+                            <div class="error-message"></div>
+                        </label>
+                        <!--贫困证明-->
+                        <label class="basic_item poor_v">
+                            <div class="file_upload">
+                                <div class="item_data upload">*贫困证明<span class="two">点击上传文件</span></div>
+                                <p class="format">(文件格式：JPG/PNG；文件大小：小于1M）</p>
+                                <p class="format2">贫困证明要求加盖家庭所在地乡人民政府公章，或更高一级主管部门公章。其中有效的公章有：乡人民政府、县民政局、市民政局。城市居民可以是居委会、街道办事处、社区公章。注意村民委员会的公章无效、单位公章无效。贫困证明尽量不出现两个或以上公章。</p>
+                            </div>
+                            <input type="file" name="poor" id="poor" value="" class="item_data item_input item_file" data-missing="请上传贫困证明"  autocomplete="off" v-on="dataArray.a20" @blur="checkForm(19)" @change="getImageData('a20',$event)" >
+                            <div class="error-message error_msg"></div>
+                        </label>
+
+                        <!--主要收入来源-->
+                        <label class="basic_item main_source">
+                            <div class="intro">主要收入来源</div>
+                            <textarea name="source" id="source" cols="30" rows="10" class="item_data item_input" placeholder="请详细描述曾在校所获得的荣誉" v-model="dataArray.a21" @blur="checkForm(20)"></textarea>
+                            <div class="error-message"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <!--梦想宣言-->
+                <div class="dream">
+                    <div class="area_title">梦想宣言</div>
+                    <div class="basic">
+                        <label class="basic_item dream_dec">
+                            <div class="intro">*载梦前行梦想志愿书</div>
+                            <textarea name="application" id="application" cols="30" rows="10" class="item_data item_input"  placeholder="一个勇敢的尝试去实现自我价值,一个充满希望的平台来推动梦想,一个等待已久的机会去改变命运"  data-missing="请填写载梦前行梦想志愿书" v-model="dataArray.a22" @blur="checkForm(21)"></textarea>
+                            <div class="error-message"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="basic">
+                    <p class="tips">* 所有个人信息都安全保密，不会用于任何渠道对外公开宣传使用。</p>
+                    <label class="basic_item checkBox">
+                        <input type="checkbox" id="tc_check" class="item_data" name="tc_check" data-missing="请同意保密协议" @blur="checkForm(22)" v-model="dataArray.a23">
+                        <span class="check">我承诺所提交的信息，均必须真实有效，如有不实，斯堪尼亚有权取消对我的帮扶。</span>
+                        <div class="error-message error_mess"></div>
+                    </label>
+                </div>
+                <div id="submit_btn" class="submit_btn" @click="checkForm(23)">即刻报名</div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/func.js"></script>
+</body>
+</html>
