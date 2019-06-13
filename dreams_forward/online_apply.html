@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>斯堪尼亚载梦前行助学计划</title>
+
+    <link rel="stylesheet" href="fancybox/fancybox.css"  type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/global.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script src="js/vue.js"></script>
+    <script type="text/javascript" src="fancybox/mousewheel.js"></script>
+    <script type="text/javascript" src="fancybox/fancyboxmin.js"></script>
+
+</head>
+<body>
+    <div id="out_box" class="out_box">
+        <div class="top">
+            <img src="images/helpStudy_plan_mb_01.jpg" alt="" class="mb_show">
+            <img src="images/online_registration_01.png" alt="" class="pc_show">
+            <img src="images/online_registration_02.jpg" alt="">
+            <div class="content_box">
+                <p class="title">斯堪尼亚载梦前行助学计划</p>
+                <p class="step">简单4步，完成在线报名</p>
+                <p class="tip">请如实填写以下个人资料，以便我们后续审核资料</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <form id="data_form">
+                <!--个人信息-->
+                <div class="basic_area person">
+                    <div class="area_title">个人信息</div>
+                    <div class="basic">
+                        <!--姓名-->
+                        <label class="basic_item">
+                            <input type="text" name="name" id="name" value="" class="item_data item_input" data-missing="请填写您的姓名" maxlength="50" placeholder="* 姓名" autocomplete="off" v-model="dataArray.a1" @blur="checkForm(0)">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--性别-->
+                        <label class="basic_item">
+                            <select name="sex" id="sex" class="item_data item_select"  data-missing="请选择您的性别" v-model="dataArray.a2" @change="checkForm(1)">
+                                <option value="" hidden>* 性别</option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                            <div class="error-message"></div>
+                        </label>
+
+                        <!--身份证-->
+                        <label class="basic_item">
+                            <input type="text" name="icard" id="icard" value="" class="item_data item_input" data-missing="请填写您的身份证号码"  placeholder="* 身份证" autocomplete="off" maxlength="18" v-model="dataArray.a3" @blur="checkForm(2)">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--邮箱-->
+                        <label class="basic_item">
+                            <input type="text" name="email" id="email" value="" class="item_data item_input"  placeholder="邮箱" autocomplete="off" v-model="dataArray.a4" @blur="checkForm(3)" maxlength="50">
+                            <div class="error-message"></div>
+                        </label>
+
+                        <!--手机号码-->
+                        <label class="basic_item phone">
+                            <input type="text" name="contactNo" id="contactNo" value="" class="item_data item_input" data-missing="请填写您的手机号码"  placeholder="* 手机号码" maxlength="11" autocomplete="off" v-model="dataArray.a5" @blur="checkForm(4)">
+                            <div class="error-message"></div>
+                            <button class="get_vcode" type="button" id="get_vcode" @click="getAuthenticationCode($event)">获取验证码</button>
+                        </label>
+                        <!--验证码-->
+                        <label class="basic_item">
+                            <input type="text" name="vcode" id="vcode" value="" class="item_data item_input" data-missing="请输入您的验证码"   placeholder="* 验证码" autocomplete="off" v-model="dataArray.a6" @blur="checkForm(5)" maxlength="6">
+                            <div class="error-message"></div>
+                        </label>
+
+                        <!--户籍所在地-->
+                        <p class="region_title">* 户籍所在地</p>
+                        <label class="basic_item region region_area">
+                            <select  @change="selectchange(dataArray.a7);checkForm(6);" name="province" id="province" class="item_data item_select"  data-missing="请选择省份" v-model="dataArray.a7">
+                                <option value="" hidden>省份</option>
+                                <option v-for="item in provinceArr" :key="item.id" :value="item.name">{{item.name}}</option>
+                            </select>
+                            <div class="error-message err_msg"></div>
+                        </label>
+                        <label class="basic_item region region_area">
+                            <select name="city" id="city" class="item_data item_select"  data-missing="请选择市" v-model="dataArray.a8" @change="checkForm(7)" :disabled="disableEmission" >
+                                <option value="" hidden>市</option>
+                                <option v-for="item in cities" :key="item.id" :value="item">{{item}}</option>
+                            </select>
+                            <div class="error-message err_msg"></div>
+                        </label>
+
+                        <label class="basic_item region region2">
+                            <input type="text" name="county" id="county" value="" class="item_data item_input" placeholder="县" autocomplete="off" maxlength="20" v-model="dataArray.a9" @blur="checkForm(8)" :disabled="disableEmission">
+                            <div class="error-message err_msg"></div>
+                        </label>
+                        <label class="basic_item region">
+                            <input type="text" name="town" id="town" value="" class="item_data item_input"  placeholder="乡（镇)" autocomplete="off" maxlength="20" v-model="dataArray.a10" @blur="checkForm(9)" :disabled="disableEmission">
+                            <div class="error-message err_msg"></div>
+                        </label>
+                        <label class="basic_item region">
+                            <input type="text" name="village" id="village" value="" class="item_data item_input"  placeholder="村" autocomplete="off" maxlength="20" v-model="dataArray.a11" @blur="checkForm(10)" :disabled="disableEmission">
+                            <div class="error-message err_msg"></div>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!--教育背景-->
+                <div class="education">
+                    <div class="area_title">教育背景</div>
+                    <div class="operation">
+                        <div class="edu_left">
+                            <!--当前状态-->
+                            <label class="basic_item clear_f">
+                                <select name="state" id="state" class="item_data item_select clear_f" data-missing="请选择当前状态" v-model="dataArray.a12" @change="checkForm(11)">
+                                    <option value="" hidden>* 当前状态</option>
+                                    <option value="在读学生">在读学生</option>
+                                    <option value="在职 ">在职</option>
+                                </select>
+                                <div class="error-message err_message"></div>
+                            </label>
+                             <!-- 学生证/毕业证-->
+                            <label class="basic_item clear_f stu_card">
+                                <div class="file_upload">
+                                    <div class="item_data upload">* 学生证/毕业证<span class="two">点击上传文件</span></div>
+                                    <p class="format">(文件格式：JPG/PNG；文件大小：小于1M）</p>
+                                </div>
+                                <input type="file" name="diploma" id="diploma" value="" data-defaultValue="* 学生证/毕业证" class="item_data item_input clear_f item_file"  data-missing="请上传学生证/毕业证"  autocomplete="off" v-on="dataArray.a13" @change="getImageData('a13',$event); checkForm(12); ">
+                                <div class="error-message err_message error"></div>
+                            </label>
+                            <!--受教育程度-->
+                            <label class="basic_item clear_f">
+                                <div class="intro"></div>
+                                <select name="schooling" id="schooling" class="item_data item_select clear_f" data-missing="请选择受教育程度" v-model="dataArray.a14" @change="checkForm(13)">
+                                    <option value="" hidden>* 受教育程度</option>
+                                    <option value="6">大专</option>
+                                    <option value="8">高中</option>
+                                    <option value="7">中专</option>
+                                </select>
+                                <div class="error-message err_message"></div>
+                            </label>
+                        </div>
+                        <!--曾获得的荣誉-->
+                        <div class="edu_right">
+                            <label class="basic_item clear_f">
+                                <textarea name="honor" id="honor" cols="30" rows="10" class="item_data item_input clear_f" placeholder="曾获得的荣誉 请详细描述曾在校所获得的荣誉" v-model="dataArray.a15" @blur="checkForm(14)" maxlength="500"></textarea>
+                                <div class="error-message"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!--家庭状况-->
+                <div class="family">
+                    <div class="area_title">家庭状况</div>
+                    <div class="basic">
+                        <!--家庭人口数-->
+                        <label class="basic_item">
+                            <div class="unit">人</div>
+                            <input type="text" name="familyNo" id="familyNo" value="" class="item_data item_input" placeholder="* 家庭人口数" data-missing="请输入家庭人口数" maxlength="3" autocomplete="off" v-model="dataArray.a16" @blur="checkForm(15)">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--劳动人口数-->
+                        <label class="basic_item">
+                            <div class="unit">人</div>
+                            <input type="text" name="workNo" id="workNo" value="" class="item_data item_input" placeholder="* 劳动人口数" data-missing="请输入劳动人口数" autocomplete="off" placeholder="0" maxlength="5" v-model="dataArray.a17" @blur="checkForm(16)">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--家庭年收入-->
+                        <label class="basic_item">
+                            <div class="unit">元</div>
+                            <input type="text" name="income" id="income" value="" class="item_data item_input"  placeholder="* 家庭年收入" data-missing="请输入家庭年收入"  autocomplete="off" v-model="dataArray.a18" @blur="checkForm(17)" maxlength="20">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--家庭年支出-->
+                        <label class="basic_item">
+                            <div class="unit">元</div>
+                            <input type="text" name="expenditure" id="expenditure" value="" class="item_data item_input"  placeholder="* 家庭年支出"  data-missing="请输入家庭年支出"  autocomplete="off" v-model="dataArray.a19" @blur="checkForm(18)" maxlength="20">
+                            <div class="error-message"></div>
+                        </label>
+                        <!--贫困证明-->
+                        <label class="basic_item poor_v">
+                            <div class="file_upload">
+                                <div class="item_data upload">* 贫困证明<span class="two">点击上传文件</span></div>
+                                <p class="format">(文件格式：JPG/PNG；文件大小：小于1M）</p>
+                                <p class="format2">贫困证明要求加盖家庭所在地乡人民政府公章，或更高一级主管部门公章。其中有效的公章有：乡人民政府、县民政局、市民政局。城市居民可以是居委会、街道办事处、社区公章。注意村民委员会的公章无效、单位公章无效。贫困证明尽量不出现两个或以上公章。</p>
+                            </div>
+                            <input type="file" name="poor" id="poor" value="" data-defaultValue="* 贫困证明" class="item_data item_input item_file" data-missing="请上传贫困证明"  autocomplete="off" v-on="dataArray.a20" @change="getImageData('a20',$event);checkForm(19);" >
+                            <div class="error-message error_msg"></div>
+                        </label>
+
+                        <!--主要收入来源-->
+                        <label class="basic_item main_source">
+                            <div class="intro">主要收入来源</div>
+                            <textarea name="source" id="source" cols="30" rows="10" class="item_data item_input" placeholder="请详细描述曾在校所获得的荣誉" v-model="dataArray.a21" @blur="checkForm(20)" maxlength="500"></textarea>
+                            <div class="error-message"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <!--梦想宣言-->
+                <div class="dream">
+                    <div class="area_title">梦想宣言</div>
+                    <div class="basic">
+                        <label class="basic_item dream_dec">
+                            <div class="intro">* 载梦前行梦想志愿书</div>
+                            <textarea name="application" id="application" cols="30" rows="10" class="item_data item_input"  placeholder="一个勇敢的尝试去实现自我价值,一个充满希望的平台来推动梦想,一个等待已久的机会去改变命运"  data-missing="请填写载梦前行梦想志愿书" v-model="dataArray.a22" @blur="checkForm(21)" maxlength="500"></textarea>
+                            <div class="error-message"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="basic">
+                    <p class="tips">* 所有个人信息都安全保密，不会用于任何渠道对外公开宣传使用。</p>
+                    <label class="basic_item checkBox">
+                        <input type="checkbox" id="tc_check" class="item_data" name="tc_check" data-missing="请同意保密协议" @blur="checkForm(22)" v-model="dataArray.a23">
+                        <span class="check">我同意该 <a href="#inline1" class="tip_popup">隐私条款</a>，并承诺所提交的信息，均必须真实有效，如有不实，斯堪尼亚有权取消对我的帮扶。</span>
+                        <div class="error-message error_mess"></div>
+                    </label>
+                </div>
+                <div id="submit_btn" class="submit_btn" @click="checkForm(23)">即刻报名</div>
+            </form>
+        </div>
+
+        <div style="display:none;">
+            <div id="inline1">
+                <h1>About cookies</h1>
+                <p>Our website uses cookies. Below, you will find further information on these cookies; what they are, what cookies we use, what our purpose is for using them, and how you go about blocking or deleting cookies.</p>
+                <p>With the exception of cookies that are strictly necessary to enable you to move around the website and use its features, we will only use cookies if you have allowed us to do so by checking the box “Yes, I accept your use of cookies”. Please be advised that if you do not allow us to use cookies, it may negatively affect your browsing experience.
+                </p>
+                <h1>WHAT IS A COOKIE?</h1>
+                <p>Cookies are text files containing small amounts of information, which are downloaded to your device when you visit a website. Cookies are then sent back to the originating website on each subsequent visit, or to another website that recognises that cookie. Cookies are useful because they allow a website to recognise a user’s device.</p>
+                <p>One type of cookie will save a file permanently on your computer. It can thereafter be used to customise this website based on your choices and interests. Another common type of cookie is the “session cookie”. When you visit a website, session cookies are sent between your computer and the server to collect information. Session cookies are not saved after you close your internet browser. You can find more information about cookies at <a href="www.allaboutcookies.org">www.allaboutcookies.org</a>.</p>
+                <h1>WHAT DO WE USE COOKIES FOR?</h1>
+                <p>We use cookies to enhance the functionality of our website. For example, cookies help authenticate the user if the user logs in to a secure area of the website, to determine what information is made available on a particular webpage. Also, login information can be stored in a cookie, so the user can enter and leave the website without having to re-enter the same authentication information over and over. Cookies are also used to help you save certain information on the website, such as favourite products etc. They are also used for collecting anonymous statistics about user behaviour to enable us to improve the website experience.</p>
+                <h1>COOKIES USED ON OUR WEBSITE</h1>
+                <p>We use the following categories of cookies on this website:</p>
+                <ul>
+                    <li>- Permanent cookies. Permanent cookies remain on the user’s computer/device for a pre-defined period of time. Permanent cookies are used to collect identifying information about the user, such as browsing behaviour or user preferences for a specific website.</li>
+                    <li>- Session cookies. Session cookies are temporarily stored in your internet browser, and are erased when the browser is closed.</li>
+                    <li>- Third party cookies: Third party cookies allow third parties to download cookies to your device. They may be used to track your browsing history, or allow you to send a page from our website to your social media account such as Facebook or Twitter.</li>
+                </ul>
+                <p>For more information regarding what cookies we use please see our detailed cookie-list (below).</p>
+                <h1>HOW TO BLOCK AND/OR DELETE COOKIES</h1>
+                <p>If you do not wish to accept cookies you can change your web browser settings to automatically block the storage of cookies or to inform you when a website wants to store cookies on your computer. Previously stored cookies can also be deleted through your web browser. More information can be found through your web browser’s support pages. If you use several different devices to access our website (computer, tablet or smartphone), you will have to change the browser settings on all devices.</p>
+
+                <h1>Privacy Statement</h1>
+                <p>A core value for us at Scania is Respect for the individual. This is the foundation when we interact with you in your role as our valued customer, a driver of our vehicles, a co-worker in our global organisation or as a trusted business partner/supplier providing services to us in order to help us deliver sustainable transport solutions.</p>
+                <p>We collect your personal data when it is needed to:</p>
+                <ul>
+                    <li>- deliver our products and services,</li>
+                    <li>- support and assist you when you use our products & services,</li>
+                    <li>- fulfill and follow up contractual obligations, ours as well as yours</li>
+                    <li>- fulfill legal obligations</li>
+                    <li>- provide information about our products & services as well as upcoming events,</li>
+                    <li>- improve quality and further develop our products & services as well as our organization.</li>
+                </ul>
+                <p>We strive to handle and protect your personal data with the same respect and integrity that we would apply to ourselves. We never sell your data. Sometimes we utilize trusted business partners to help us deliver our products & services. In those cases we need to share your data with our business partners, we ensure that they treat your data with the same respect and integrity that we do.</p>
+                <p>In this privacy statement we would like to inform you what personal data we might process, why we are doing it and how we ensure that your rights and your privacy is respected. If you have any questions or concerns you are always welcome to contact us at
+<a href="dataprotection@scania.com">dataprotection@scania.com</a> or talk to your Scania contact.</p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script type="text/javascript" src="js/func.js"></script>
+</body>
+</html>
